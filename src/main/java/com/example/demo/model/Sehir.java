@@ -3,13 +3,11 @@ package com.example.demo.model;
 import javax.persistence.*;
 
 @Entity
-@Table(name="Tree")
-public class Tree {
-
+@Table(name = "sehir")
+public class Sehir {
     private Long id;
     private Long name;
-
-
+    private Bolge bolge;
 
     @Id
     @Column(name = "id", columnDefinition = "serial")
@@ -28,5 +26,15 @@ public class Tree {
 
     public void setName(Long name) {
         this.name = name;
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "bolge_id")
+    public Bolge getBolge() {
+        return bolge;
+    }
+
+    public void setBolge(Bolge bolge) {
+        this.bolge = bolge;
     }
 }
