@@ -7,7 +7,7 @@ import java.util.Set;
 @Table(name="bolge")
 public class Bolge {
     private Long id;
-    private Long name;
+    private String name;
     private String ozellikler;
     private Set<Sehir> sehirSet;
 
@@ -22,11 +22,11 @@ public class Bolge {
         this.id = id;
     }
 
-    public Long getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(Long name) {
+    public void setName(String name) {
         this.name = name;
     }
 
