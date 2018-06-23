@@ -6,27 +6,27 @@ import javax.persistence.*;
 @Table(name="Tree")
 public class Tree {
 
-    private Long id;
-    private Long name;
+    private String id;
+    private String name;
 
 
 
     @Id
     @Column(name = "id", columnDefinition = "serial")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(String id) {
         this.id = id;
     }
 
-    public Long getName() {
+    public String getName() {
         return name;
     }
 
-    public void setName(Long name) {
+    public void setName(String name) {
         this.name = name;
     }
 }
