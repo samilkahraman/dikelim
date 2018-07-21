@@ -30,6 +30,7 @@ public class LoginController {
 
     @Autowired
     KullaniciService kullaniciService;
+
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String registration(Model model) {
 
@@ -40,19 +41,19 @@ public class LoginController {
 
     @RequestMapping(value = {"/newuser"}, method = RequestMethod.POST)
     public ResponseEntity<?> deneme(@RequestParam(value = "name", required = true) String name,
-                                    @RequestParam(value ="surname", required =true) String surname,
-                                    @RequestParam(value="bdate",required = true)String bdate,
-                                    @RequestParam(value="username",required = true)String username,
-                                    @RequestParam(value="password",required = true)String password)
+                                    @RequestParam(value = "surname", required = true) String surname,
+                                    @RequestParam(value = "bdate", required = true) String bdate,
+                                    @RequestParam(value = "username", required = true) String username,
+                                    @RequestParam(value = "password", required = true) String password)
 
     {
-        Date date1=new Date();
+        Date date1 = new Date();
         try {
-             date1=new SimpleDateFormat("yyyy-MM-dd").parse(bdate);
+            date1 = new SimpleDateFormat("yyyy-MM-dd").parse(bdate);
         } catch (ParseException e) {
             e.printStackTrace();
         }
-        Kullanici k=new Kullanici();
+        Kullanici k = new Kullanici();
         k.setIsim(name);
         k.setSoyisim(surname);
         k.setDogum_tarihi(date1);
@@ -62,6 +63,15 @@ public class LoginController {
         return null;
     }
 
+    @RequestMapping(value = {"/login"}, method = RequestMethod.POST)
+    public String deneme(@RequestParam(value = "username", required = true) String username,
+                                    @RequestParam(value = "password", required = true) String password) {
+        Kisi k=kisiService.findByKullaniciAdi(username);
+        if(k.getPassword().equals(password))
+            return "result";
+        else
+            return null;
+    }
 
 
 }
