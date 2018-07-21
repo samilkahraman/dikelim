@@ -1893,26 +1893,30 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <form class="form-horizontal" role="form">
                                     <div class="form-body">
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label">İsim</label>
+                                            <label class="col-md-3 control-label">İsim </label>
                                             <div class="col-md-9">
-                                                <input type="text" class="form-control" placeholder="Enter text">
+                                                <input type="text" id="name" class="form-control" placeholder="Enter text">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">Soy İsim</label>
                                             <div class="col-md-9">
-                                                <input type="text" class="form-control" placeholder="Enter text">
+                                                <input type="text" id="surname" class="form-control" placeholder="Enter text">
                                             </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="col-md-3 control-label">Doğum Yılınız</label>
                                             <div class="col-md-9">
-                                                <select class="form-control">
-                                                    <option>1996</option>
-                                                    <option>1996</option>
-                                                    <option>1996</option>
-                                                    <option>1996</option>
-                                                    <option>1996</option>
+                                                <input type="date" name="bday">
+                                            </div>
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Kisi Türü</label>
+                                            <div class="col-md-9">
+                                                <select class="form-control" id="type">
+                                                    <option>Kullanıcı</option>
+                                                    <option>Yetkili</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -1921,7 +1925,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <div class="form-actions">
                                         <div class="row">
                                             <div class="col-md-offset-3 col-md-9">
-                                                <button type="submit" class="btn green">Submit</button>
+                                                <button type="button" onclick="saveuser()" class="btn green">Kaydet</button>
                                                 <button type="button" class="btn default">Cancel</button>
                                             </div>
                                         </div>
@@ -1929,7 +1933,48 @@ License: You must have a valid license purchased only from themeforest(the above
                                 </form>
                             </div>
                         </div>
-                        <!-- END SAMPLE FORM PORTLET-->
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</body>
+
+<script>
+    $(document).ready(
+        function () {
+            var token = $("meta[name='_csrf']").attr("content");
+
+            $.ajaxSetup({
+                headers: {
+                    "X-CSRF-Token": token
+                }
+            });
+
+
+
+        })
+    function saveuser() {
+        var name=document.getElementById("name").value
+        var surname=(document.getElementById("surname").value)
+        var birthday=(document.getElementById("birthdate").value)
+        var type=(document.getElementById("type").value)
+        alert(type)
+
+        $.ajax({
+                type: "POST",
+                url: "/bilgiyolla",
+                async: false,
+                data: {name: (name),
+                    surname:surname,
+                    birthday:birthday,
+                    type:type
+                },
+                success: function (result) {
+                    alert("Başarıyla kaydedilmiştir0");
+                }
+            }
+        )
+    }
+</script>
+
+<!-- END SAMPLE FORM PORTLET-->
                         <!-- BEGIN SAMPLE FORM PORTLET-->
                         <div class="portlet box purple ">
                             <div class="portlet-title">
