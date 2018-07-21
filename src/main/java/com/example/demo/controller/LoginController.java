@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 
@@ -39,15 +41,21 @@ public class LoginController {
     @RequestMapping(value = {"/newuser"}, method = RequestMethod.POST)
     public ResponseEntity<?> deneme(@RequestParam(value = "name", required = true) String name,
                                     @RequestParam(value ="surname", required =true) String surname,
-                                    @RequestParam(value="bdate",required = true)Date bdate,
+                                    @RequestParam(value="bdate",required = true)String bdate,
                                     @RequestParam(value="username",required = true)String username,
                                     @RequestParam(value="password",required = true)String password)
 
     {
+        Date date1=new Date();
+        try {
+             date1=new SimpleDateFormat("yyyy-MM-dd").parse(bdate);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
         Kullanici k=new Kullanici();
         k.setIsim(name);
         k.setSoyisim(surname);
-        k.setDogum_tarihi(bdate);
+        k.setDogum_tarihi(date1);
         k.setKullaniciAdi(username);
         k.setPassword(password);
         kullaniciService.save(k);
