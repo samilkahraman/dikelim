@@ -102,36 +102,36 @@ License: You must have a valid license purchased only from themeforest(the above
     </form>
     <!-- END FORGOT PASSWORD FORM -->
     <!-- BEGIN REGISTRATION FORM -->
-    <form class="register-form" action="index.html" method="post">
+    <form class="register-form" action="/" >
         <div class="form-title">
             <span class="form-title">Sign Up</span>
         </div>
         <p class="hint"> Bilgilerinizi Giriniz: </p>
         <div class="form-group">
             <label class="control-label visible-ie8 visible-ie9">İsminiz</label>
-            <input class="form-control placeholder-no-fix" type="text" placeholder="İsim" name="fullname" /> </div>
+            <input class="form-control placeholder-no-fix" type="text" placeholder="İsim" name="fullname" id="name"/> </div>
         <div class="form-group">
             <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
             <label class="control-label visible-ie8 visible-ie9">Soy İsim</label>
-            <input class="form-control placeholder-no-fix" type="text" placeholder="Soy İsim" name="name" /> </div>
+            <input class="form-control placeholder-no-fix" type="text" placeholder="Soy İsim" name="name"  id="surname" /> </div>
         <div class="form-group">
             <label class="control-label visible-ie8 visible-ie9">Address</label>
-            <input class="form-control placeholder-no-fix" type="date" placeholder="Doğum Tarihi gg/aa/yyyy" name="address" /> </div>
+            <input class="form-control placeholder-no-fix" type="date" placeholder="Doğum Tarihi gg/aa/yyyy" name="date" id="bdate" /> </div>
 
         <p class="hint"> Kullanıcı Adınız ve Şifreniz: </p>
         <div class="form-group">
             <label class="control-label visible-ie8 visible-ie9">Kullanıcı Adı</label>
-            <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Username" name="username" /> </div>
+            <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Username" name="username" id="username" /> </div>
         <div class="form-group">
             <label class="control-label visible-ie8 visible-ie9">Password</label>
-            <input class="form-control placeholder-no-fix" type="password" autocomplete="off" id="register_password" placeholder="Password" name="password" /> </div>
+            <input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="Password" name="password" id="register_password"/> </div>
         <div class="form-group">
             <label class="control-label visible-ie8 visible-ie9">Re-type Your Password</label>
             <input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="Re-type Your Password" name="rpassword" /> </div>
 
         <div class="form-actions">
-            <button type="button" id="register-back-btn" class="btn btn-default">Back</button>
-            <button type="submit" id="register-submit-btn" class="btn red uppercase pull-right">Submit</button>
+            <button type="button" id="register-back-btn" class="btn btn-default">Geri</button>
+            <button type="button" onclick="saveuser()" id="register-submit-btn" class="btn red uppercase pull-right">Kaydet</button>
         </div>
     </form>
     <!-- END REGISTRATION FORM -->
@@ -164,6 +164,46 @@ License: You must have a valid license purchased only from themeforest(the above
 <!-- END PAGE LEVEL SCRIPTS -->
 <!-- BEGIN THEME LAYOUT SCRIPTS -->
 <!-- END THEME LAYOUT SCRIPTS -->
-</body>
 
+</body>
+<script>
+    $(document).ready(
+        function () {
+            var token = $("meta[name='_csrf']").attr("content");
+
+            $.ajaxSetup({
+                headers: {
+                    "X-CSRF-Token": token
+                }
+            });
+
+
+
+        })
+    function saveuser() {
+        var name=document.getElementById("name").value
+        var surname=(document.getElementById("surname").value)
+        date bdate = (document.getElementById("bdate"))
+        var password=document.getElementById("register_password").value;
+        var username=document.getElementById("username").value;
+
+        $.ajax({
+                type: "POST",
+                url: "/newuser",
+                async: false,
+                data: {name: (name),
+                    surname:surname,
+                    bdate:bdate,
+                    username:username,
+                    password:username,
+
+                },
+                success: function (result) {
+                    alert("Başarıyla kaydedilmiştir");
+                    window.location="/"
+                }
+            }
+        )
+    }
+</script>
 </html>
