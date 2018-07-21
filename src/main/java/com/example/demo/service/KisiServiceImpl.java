@@ -16,5 +16,10 @@ public class KisiServiceImpl implements KisiService {
     public void save(Kisi kisi) {
             kisiRepository.save(kisi);
         }
+
+    @Override
+    public Kisi findByKullaniciAdi(String username) {
+        return kisiRepository.findByKullaniciAdi(username);
     }
+}
 
