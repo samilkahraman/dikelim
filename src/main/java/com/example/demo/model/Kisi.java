@@ -4,13 +4,15 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Inheritance
+@Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "kisi")
 public class Kisi {
     private Long id;
     private Date dogum_tarihi;
     private String isim;
     private String soyisim;
+    private String kullaniciAdi;
+    private String password;
 
     @Id
     @Column(name = "id", columnDefinition = "serial")
@@ -46,4 +48,21 @@ public class Kisi {
     public void setSoyisim(String soyisim) {
         this.soyisim = soyisim;
     }
+
+    public String getKullaniciAdi() {
+        return kullaniciAdi;
+    }
+
+    public void setKullaniciAdi(String kullaniciAdi) {
+        this.kullaniciAdi = kullaniciAdi;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }
+

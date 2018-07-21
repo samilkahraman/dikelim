@@ -4,21 +4,20 @@ import javax.persistence.*;
 
 @Entity
 @Table(name="kullanici")
+@PrimaryKeyJoinColumn(name = "kisi_id")
 public class Kullanici  {
 
 
-    private Long id;
+    private Long puan;
 
 
-    @Id
-    @Column(name = "id", columnDefinition = "serial")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public Long getId() {
-        return id;
+
+    public Long getPuan() {
+        return puan;
     }
 
-
-    public void setId(Long id) {
-        this.id = id;
+    public void setPuan(Long puan) {
+        this.puan = puan;
     }
 }
+
