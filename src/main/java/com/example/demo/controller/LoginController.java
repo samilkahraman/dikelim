@@ -64,9 +64,10 @@ public class LoginController {
     }
 
     @RequestMapping(value = {"/login"}, method = RequestMethod.POST)
-    public String deneme(@RequestParam(value = "username", required = true) String username,
+    public String giris(@RequestParam(value = "username", required = true) String username,
                                     @RequestParam(value = "password", required = true) String password) {
         Kisi k=kisiService.findByKullaniciAdi(username);
+
         if(k.getPassword().equals(password))
             return "result";
         else
