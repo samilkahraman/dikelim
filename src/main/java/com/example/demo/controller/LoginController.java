@@ -84,6 +84,8 @@ public class LoginController {
     public String dikim(@PathVariable String id, Model model) {
         return "dikim";
     }
+
+
 }
 
 
