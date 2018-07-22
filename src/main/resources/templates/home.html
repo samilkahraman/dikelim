@@ -56,7 +56,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <div class="page-header-inner ">
             <!-- BEGIN LOGO -->
             <div class="page-logo">
-                <a id="anasayfa">
+                <a id="abc">
                     <img src="../assets/layouts/layout/img/logo.png" alt="logo" class="logo-default" /> </a>
                 <div class="menu-toggler sidebar-toggler">
                     <span></span>
@@ -105,14 +105,12 @@ License: You must have a valid license purchased only from themeforest(the above
                     <!-- DOC: To remove the search box from the sidebar you just need to completely remove the below "sidebar-search-wrapper" LI element -->
 
                     <li class="nav-item start ">
-
-
-                                <a id="anasayfa2" class="nav-link ">
-                                    <i class="icon-home"></i>
-                                    <span class="title">Anasayfa</span>
-                                </a>
-
+                        <a id="anasayfa" class="nav-link ">
+                            <i class="icon-home"></i>
+                            <span class="title">Anasayfa</span>
+                        </a>
                     </li>
+
                     <li class="heading">
                         <h3 class="uppercase">Features</h3>
                     </li>
@@ -159,7 +157,7 @@ License: You must have a valid license purchased only from themeforest(the above
                     <div class="col-md-12">
                         <h1>DİKELİM</h1>
                         <h2>DAHA YEŞİL YARINLAR İÇİN</h2>
-                        <a class="btn btn-danger"  id="abc"  >HEMEN AĞAÇ DİK</a>
+                        <a class = "btn btn-danger" id="abc2" > HEMEN AĞAÇ DİK </a>
                     </div>
                 </div>
                 <!-- END CONTENT HEADER -->
@@ -285,13 +283,13 @@ License: You must have a valid license purchased only from themeforest(the above
 
             a.href="/dikim/"+id;
 
+            var ab=document.getElementById("abc2");
+
+            ab.href="/dikim/"+id;
+
             var anasayfa=document.getElementById("anasayfa");
 
             anasayfa.href="/home/"+id;
-
-            var anasayfa2=document.getElementById("anasayfa2");
-
-            anasayfa2.href="/home/"+id;
 
             var genel=document.getElementById("genel");
 
@@ -318,7 +316,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
             profil2.href="/profil/"+id;
 
-        })
+        });
 
     function agacdik() {
 
