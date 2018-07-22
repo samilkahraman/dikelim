@@ -2,6 +2,7 @@ package com.example.demo.model;
 
 import javax.persistence.*;
 import java.util.Date;
+import java.util.Set;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
@@ -13,7 +14,8 @@ public class Kisi {
     private String soyisim;
     private String kullaniciAdi;
     private String password;
-
+    private Set<Agac> dikilen_agacSet;
+    private Set<Agac> satin_alinan_agacSet;
     @Id
     @Column(name = "id", columnDefinition = "serial")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -63,6 +65,24 @@ public class Kisi {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @OneToMany(mappedBy = "diken_kisi", cascade = CascadeType.ALL)
+    public Set<Agac> getDikilen_agacSet() {
+        return dikilen_agacSet;
+    }
+
+    public void setDikilen_agacSet(Set<Agac> dikilen_agacSet) {
+        this.dikilen_agacSet = dikilen_agacSet;
+    }
+
+    @OneToMany(mappedBy = "satin_alan_kisi", cascade = CascadeType.ALL)
+    public Set<Agac> getSatin_alinan_agacSet() {
+        return satin_alinan_agacSet;
+    }
+
+    public void setSatin_alinan_agacSet(Set<Agac> satin_alinan_agacSet) {
+        this.satin_alinan_agacSet = satin_alinan_agacSet;
     }
 }
 

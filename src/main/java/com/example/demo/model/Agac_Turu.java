@@ -10,6 +10,7 @@ public class Agac_Turu {
     private String isim;
     private Long agac_turu_id;
     private Set<Dikim_Alani> dikim_alani_set;
+    private Set<Agac> agacSet;
 
     @Id
     @Column(name = "id", columnDefinition = "serial")
@@ -49,5 +50,14 @@ public class Agac_Turu {
 
     public void setDikim_alani_set(Set<Dikim_Alani> dikim_alani_set) {
         this.dikim_alani_set = dikim_alani_set;
+    }
+
+    @OneToMany(mappedBy = "agac_turu", cascade = CascadeType.ALL)
+    public Set<Agac> getAgacSet() {
+        return agacSet;
+    }
+
+    public void setAgacSet(Set<Agac> agacSet) {
+        this.agacSet = agacSet;
     }
 }

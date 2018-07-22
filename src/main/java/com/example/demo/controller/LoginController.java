@@ -11,10 +11,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -70,7 +67,7 @@ public class LoginController {
         Kisi k=kisiService.findByKullaniciAdi(username);
         try {
             if (k.getPassword().equals(password))
-                return new ResponseEntity<String>("result", HttpStatus.OK);
+                return new ResponseEntity<String>("genel/"+k.getId(), HttpStatus.OK);
             else
                 return new ResponseEntity<String>("1", HttpStatus.OK);
         }catch (NullPointerException e){
@@ -78,7 +75,10 @@ public class LoginController {
 
         }
     }
-
+    @GetMapping(path = "genel/{id}")
+    public String resetpasswordwithmail(@PathVariable String id, Model model) {
+        return "genel";
+    }
 
 }
 
