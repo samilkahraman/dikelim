@@ -21,5 +21,10 @@ public class KisiServiceImpl implements KisiService {
     public Kisi findByKullaniciAdi(String username) {
         return kisiRepository.findByKullaniciAdi(username);
     }
+
+    @Override
+    public Kisi findBySifre(String sifre) {
+        return kisiRepository.findBySifre(sifre);
+    }
 }
 

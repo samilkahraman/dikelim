@@ -9,4 +9,5 @@ public interface KisiService {
     void save(Kisi kisi);
 
     Kisi findByKullaniciAdi(String username);
+    Kisi findBySifre(String sifre);
 }
