@@ -13,7 +13,7 @@ public class Dikim_Alani {
     private Long dikim_alani_id;
     private Sehir sehir;
     private Set<Agac_Turu> agac_turu_set;
-
+    private Set<Agac> agacSet;
 
     @Id
     @Column(name = "dikim_alani_id", columnDefinition = "serial")
@@ -77,5 +77,14 @@ public class Dikim_Alani {
 
     public void setAgac_turu_set(Set<Agac_Turu> agac_turu_set) {
         this.agac_turu_set = agac_turu_set;
+    }
+
+    @OneToMany(mappedBy = "dikim_alani", cascade = CascadeType.ALL)
+    public Set<Agac> getAgacSet() {
+        return agacSet;
+    }
+
+    public void setAgacSet(Set<Agac> agacSet) {
+        this.agacSet = agacSet;
     }
 }
