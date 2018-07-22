@@ -6,16 +6,21 @@ import java.util.Set;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
-@Table(name = "kisi")
+@Table(name = "kisi", uniqueConstraints = @UniqueConstraint(name = "username_uc"
+        , columnNames = "kullaniciAdi"))
 public class Kisi {
     private Long id;
     private Date dogum_tarihi;
     private String isim;
     private String soyisim;
+
+    @Column(unique = true)
     private String kullaniciAdi;
+
     private String password;
     private Set<Agac> dikilen_agacSet;
     private Set<Agac> satin_alinan_agacSet;
+
     @Id
     @Column(name = "id", columnDefinition = "serial")
     @GeneratedValue(strategy = GenerationType.IDENTITY)

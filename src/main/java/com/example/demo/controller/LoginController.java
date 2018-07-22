@@ -67,7 +67,7 @@ public class LoginController {
         Kisi k=kisiService.findByKullaniciAdi(username);
         try {
             if (k.getPassword().equals(password))
-                return new ResponseEntity<String>("genel/"+k.getId(), HttpStatus.OK);
+                return new ResponseEntity<String>("home/"+k.getId(), HttpStatus.OK);
             else
                 return new ResponseEntity<String>("1", HttpStatus.OK);
         }catch (NullPointerException e){
@@ -75,11 +75,15 @@ public class LoginController {
 
         }
     }
-    @GetMapping(path = "genel/{id}")
+    @GetMapping(path = "home/{id}")
     public String resetpasswordwithmail(@PathVariable String id, Model model) {
-        return "genel";
+        return "home";
     }
 
+    @GetMapping(path = "dikim/{id}")
+    public String dikim(@PathVariable String id, Model model) {
+        return "dikim";
+    }
 }
 
 
