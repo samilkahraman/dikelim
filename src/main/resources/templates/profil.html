@@ -59,7 +59,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <div class="page-header-inner ">
             <!-- BEGIN LOGO -->
             <div class="page-logo">
-                <a href="home">
+                <a id="abc">
                     <img src="../assets/layouts/layout/img/logo.png" alt="logo" class="logo-default" /> </a>
                 <div class="menu-toggler sidebar-toggler">
                     <span></span>
@@ -108,34 +108,32 @@ License: You must have a valid license purchased only from themeforest(the above
                     <!-- DOC: To remove the search box from the sidebar you just need to completely remove the below "sidebar-search-wrapper" LI element -->
 
                     <li class="nav-item start ">
-
-
-                        <a href="/home" class="nav-link ">
+                        <a id="anasayfa" class="nav-link ">
                             <i class="icon-home"></i>
                             <span class="title">Anasayfa</span>
                         </a>
-
                     </li>
+
                     <li class="heading">
                         <h3 class="uppercase">Features</h3>
                     </li>
 
                     <li class="nav-item  ">
-                        <a href="/genel" class="nav-link ">
+                        <a id="genel" class="nav-link ">
                             <i class="icon-diamond"></i>
                             <span class="title">Genel Topluluk</span>
                         </a>
                     </li>
 
                     <li class="nav-item  ">
-                        <a href="/bireysel" class="nav-link ">
+                        <a id="bireysel" class="nav-link ">
                             <i class="icon-settings"></i>
                             <span class="title">Bireysel</span>
                         </a>
                     </li>
 
                     <li class="nav-item  ">
-                        <a href="/profil" class="nav-link ">
+                        <a id="profil" class="nav-link ">
                             <i class="icon-user"></i>
                             <span class="title">Profil Yönetimi</span>
                         </a>
@@ -338,7 +336,28 @@ License: You must have a valid license purchased only from themeforest(the above
                     "X-CSRF-Token": token
                 }
             });
+            var url=window.location.href
+            var id=url.substring(url.lastIndexOf('/')+1);
+            var a=document.getElementById("abc");
 
+            a.href="/dikim/"+id;
+
+            var anasayfa=document.getElementById("anasayfa");
+
+            anasayfa.href="/home/"+id;
+
+            var genel=document.getElementById("genel");
+
+            genel.href="/genel/"+id;
+
+
+            var bireysel=document.getElementById("bireysel");
+
+            bireysel.href="/bireysel/"+id;
+
+            var profil=document.getElementById("profil");
+
+            profil.href="/profil/"+id;
 
         })
 
@@ -376,5 +395,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 
 </script>
+
+
 <!-- Div kapama eklendi body öncesine -->
 </html>
