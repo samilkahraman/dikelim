@@ -9,7 +9,6 @@ public class Sehir {
     private String id;
     private String name;
     private Bolge bolge;
-    private Set<Dikim_Alani> dikim_alani_set;
 
 
     @Id
@@ -41,12 +40,4 @@ public class Sehir {
         this.bolge = bolge;
     }
 
-    @OneToMany(mappedBy = "sehir", cascade = CascadeType.ALL)
-    public Set<Dikim_Alani> getDikim_alani_set() {
-        return dikim_alani_set;
-    }
-
-    public void setDikim_alani_set(Set<Dikim_Alani> dikim_alani_set) {
-        this.dikim_alani_set = dikim_alani_set;
-    }
 }
