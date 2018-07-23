@@ -23,6 +23,11 @@ public class KisiServiceImpl implements KisiService {
     }
 
     @Override
+    public Kisi deleteByKullaniciAdi(String username) {
+        return kisiRepository.deleteByKullaniciAdi(username);
+    }
+
+    @Override
     public Kisi findBySifre(String sifre) {
         return kisiRepository.findBySifre(sifre);
     }

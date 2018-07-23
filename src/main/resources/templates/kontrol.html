@@ -165,33 +165,77 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="portlet-title">
                                 <div class="caption">
                                     <i class="icon-settings font-dark"></i>
-                                    <span class="caption-subject font-dark sbold uppercase">Profil Düzenleme</span>
+                                    <span class="caption-subject font-dark sbold uppercase">Kullanıcı Silme</span>
                                 </div>
 
+                            </div>
+
+                            <div class="portlet-body form">
+                                <form class="form-horizontal" role="form">
+                                    <div class="form-body">
+
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Kullanıcı Adını Girin </label>
+                                            <div class="col-md-9">
+                                                <input type="text" id="silinecekKullanıcıAdi" class="form-control"
+                                                       placeholder="Kullanıcı Adı">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Kullanıcı Adını Tekrar Girin </label>
+                                            <div class="col-md-9">
+                                                <input type="text" id="silinecekKullanıcıAdiTekrar" class="form-control"
+                                                       placeholder="Kullanıcı Adı Tekrar">
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="form-actions">
+                                        <div class="row">
+                                            <div class="col-md-offset-3 col-md-9">
+                                                <button type="button" onclick="deleteUser()" class="btn green">Sil</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                        <div class="portlet light bordered">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="icon-settings font-dark"></i>
+                                    <span class="caption-subject font-dark sbold uppercase">Kullanıcı Adı Değiştirme</span>
+                                </div>
                             </div>
                             <div class="portlet-body form">
                                 <form class="form-horizontal" role="form">
                                     <div class="form-body">
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label">Eski Şifreniz </label>
+                                            <label class="col-md-3 control-label">Mevcut Kullanıcı Adı </label>
                                             <div class="col-md-9">
-                                                <input type="text" id="eskisifre" class="form-control" placeholder="Eski Şifre">
+                                                <input type="text" id="mevcutKullaniciAdi" class="form-control"
+                                                       placeholder="Mevcut Kullanıcı Adı">
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label">Yeni Şifre</label>
+                                            <label class="col-md-3 control-label">Yeni Kullanıcı Adı</label>
                                             <div class="col-md-9">
-                                            <input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="Şifre"
-                                                   name="password" id="register_password"/>
+                                                <input class="form-control placeholder-no-fix" type="text"
+                                                       placeholder="Yeni Kullanıcı Adı"
+                                                       name="password" id="yeniKullaniciAdi"/>
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label">Yeni Şifre Tekrar</label>
+                                            <label class="col-md-3 control-label">Yeni Kullanıcı Adı Tekrar</label>
                                             <div class="col-md-9">
-                                            <input class="form-control placeholder-no-fix" type="password" autocomplete="off"
-                                                   placeholder="Şifrenizi yeniden girin" name="rpassword" id="yenisifretekrar" />
+                                                <input class="form-control placeholder-no-fix" type="password"
+                                                       placeholder="Yeni Kullanıcı Adı Tekrar" name="rpassword"
+                                                       id="yeniKullaniciAdiTekrar" />
                                             </div>
                                         </div>
+
                                     </div>
                                     <div class="form-actions">
                                         <div class="row">
@@ -204,6 +248,52 @@ License: You must have a valid license purchased only from themeforest(the above
                                 </form>
                             </div>
                         </div>
+
+                        <div class="portlet light bordered">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="icon-settings font-dark"></i>
+                                    <span class="caption-subject font-dark sbold uppercase">Kullanıcı Şifre Değiştirme</span>
+                                </div>
+                            </div>
+                            <div class="portlet-body form">
+                                <form class="form-horizontal" role="form">
+                                    <div class="form-body">
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Mevcut Kullanıcı Adı </label>
+                                            <div class="col-md-9">
+                                                <input type="text" id="mevcutKullaniciAdi" class="form-control"
+                                                       placeholder="Mevcut Kullanıcı Adı">
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Yeni Şifre</label>
+                                            <div class="col-md-9">
+                                                <input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="Şifre"
+                                                       name="password" id="register_password"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="col-md-3 control-label">Yeni Şifre Tekrar</label>
+                                            <div class="col-md-9">
+                                                <input class="form-control placeholder-no-fix" type="password" autocomplete="off"
+                                                       placeholder="Şifrenizi yeniden girin" name="rpassword" id="yenisifretekrar" />
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-actions">
+                                        <div class="row">
+                                            <div class="col-md-offset-3 col-md-9">
+                                                <button type="button" onclick="updateuser()" class="btn green">Kaydet</button>
+                                                <button type="button" class="btn default">Cancel</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
             </div>
@@ -337,7 +427,7 @@ License: You must have a valid license purchased only from themeforest(the above
                     "X-CSRF-Token": token
                 }
             });
-            var url=window.location.href
+            var url=window.location.href;
             var id=url.substring(url.lastIndexOf('/')+1);
             var a=document.getElementById("abc");
 
@@ -362,23 +452,22 @@ License: You must have a valid license purchased only from themeforest(the above
 
         });
 
-    function updateuser() {
-        var eskisifre = document.getElementById("eskisifre").value;
-        var yenisifre = (document.getElementById("register_password").value);
-        var yenisifreTekrar = (document.getElementById("yenisifretekrar").value);
+    function deleteUser() {
+        var silinecekKullaniciAdi = document.getElementById("silinecekKullanıcıAdi").value;
+        var silinecekKullaniciAdiT = document.getElementById("silinecekKullanıcıAdiTekrar").value;
 
-        if (yenisifre!=yenisifreTekrar){
-            alert("şifreler uyuşmuyor");
+
+        if (silinecekKullaniciAdi!=silinecekKullaniciAdiT){
+            alert("kullanıcı adları uyuşmuyor");
         }
         else{
             $.ajax({
                     type: "POST",
-                    url: "/sifredegisim",
+                    url: "/kullaniciSilme",
                     async: false,
                     data: {
-                        es: (eskisifre),
-                        ys: yenisifre,
-                        yst: yenisifreTekrar
+                        silKullanici: (silinecekKullaniciAdi),
+                        silKullaniciT: silinecekKullaniciAdiT
                     },
                     success: function (result) {
                         alert("Başarıyla değiştirilmiştir");
