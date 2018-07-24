@@ -21,23 +21,21 @@ License: You must have a valid license purchased only from themeforest(the above
 
 <head>
     <meta charset="utf-8" />
-    <title>Metronic Admin Theme #1 | Admin Dashboard 2</title>
+    <title>Metronic Admin Theme #1 | Bootstrap Form Wizard</title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta content="width=device-width, initial-scale=1" name="viewport" />
-    <meta content="Preview page of Metronic Admin Theme #1 for statistics, charts, recent events and reports" name="description" />
+    <meta content="Preview page of Metronic Admin Theme #1 for bootstrap form wizard demos using Twitter Bootstrap Wizard Plugin" name="description" />
     <meta content="" name="author" />
     <!-- BEGIN GLOBAL MANDATORY STYLES -->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all" rel="stylesheet" type="text/css" />
-    <link href="assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <link href="../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
     <link href="../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
     <!-- END GLOBAL MANDATORY STYLES -->
     <!-- BEGIN PAGE LEVEL PLUGINS -->
-    <link href="../assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.css" rel="stylesheet" type="text/css" />
-    <link href="../assets/global/plugins/morris/morris.css" rel="stylesheet" type="text/css" />
-    <link href="../assets/global/plugins/fullcalendar/fullcalendar.min.css" rel="stylesheet" type="text/css" />
-    <link href="../assets/global/plugins/jqvmap/jqvmap/jqvmap.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/select2/css/select2.min.css" rel="stylesheet" type="text/css" />
+    <link href="../assets/global/plugins/select2/css/select2-bootstrap.min.css" rel="stylesheet" type="text/css" />
     <!-- END PAGE LEVEL PLUGINS -->
     <!-- BEGIN THEME GLOBAL STYLES -->
     <link href="../assets/global/css/components.min.css" rel="stylesheet" id="style_components" type="text/css" />
@@ -51,7 +49,7 @@ License: You must have a valid license purchased only from themeforest(the above
     <link rel="shortcut icon" href="favicon.ico" /> </head>
 <!-- END HEAD -->
 
-<body class="page-header-fixed page-sidebar-closed-hide-logo page-container-bg-solid page-content-white">
+<body class="page-header-fixed page-sidebar-closed-hide-logo page-content-white">
 <div class="page-wrapper">
     <!-- BEGIN HEADER -->
     <div class="page-header navbar navbar-fixed-top">
@@ -72,7 +70,9 @@ License: You must have a valid license purchased only from themeforest(the above
             </a>
             <!-- END RESPONSIVE MENU TOGGLER -->
             <!-- BEGIN TOP NAVIGATION MENU -->
+            <div class="top-menu">
 
+            </div>
             <!-- END TOP NAVIGATION MENU -->
         </div>
         <!-- END HEADER INNER -->
@@ -156,117 +156,86 @@ License: You must have a valid license purchased only from themeforest(the above
                 <!-- BEGIN THEME PANEL -->
 
                 <!-- END THEME PANEL -->
+                <!-- BEGIN PAGE BAR -->
 
+                <!-- END PAGE BAR -->
+                <!-- BEGIN PAGE TITLE-->
 
-
+                <!-- END PAGE TITLE-->
+                <!-- END PAGE HEADER-->
                 <div class="row">
-                    <div class="col-lg-12 col-xs-12 col-sm-12">
-                        <div class="portlet light bordered">
+                    <div class="col-md-12">
+                        <!-- BEGIN VALIDATION STATES-->
+                        <div class="portlet light portlet-fit portlet-form bordered">
                             <div class="portlet-title">
                                 <div class="caption">
-                                    <i class="icon-settings font-dark"></i>
-                                    <span class="caption-subject font-dark sbold uppercase">Profil Düzenleme</span>
+                                    <i class="icon-settings font-red"></i>
+                                    <span class="caption-subject font-red sbold uppercase">Etkinlik Secim Ekranı</span>
                                 </div>
 
                             </div>
-                            <div class="portlet-body form">
-                                <form class="form-horizontal" role="form">
+                            <div class="portlet-body">
+                                <!-- BEGIN FORM-->
+                                <form action="#" id="form_sample_1" class="form-horizontal">
                                     <div class="form-body">
+                                        <div class="alert alert-danger display-hide">
+                                            <button class="close" data-close="alert"></button> You have some form errors. Please check below. </div>
+                                        <div class="alert alert-success display-hide">
+                                            <button class="close" data-close="alert"></button> Your form validation is successful! </div>
+
                                         <div class="form-group">
-                                            <label class="col-md-3 control-label">Eski Şifreniz </label>
-                                            <div class="col-md-9">
-                                                <input type="text" id="eskisifre" class="form-control" placeholder="Eski Şifre">
+                                            <label class="control-label col-md-3">Etkinlik
+                                                <span class="required"> * </span>
+                                            </label>
+                                            <div class="col-md-4">
+                                                <select class="form-control" name="select_multi" multiple>
+                                                    <option value="odtu">22 Eylül Odtu Ormanı Meşe Dikiyoruz!!</option>
+                                                    <option value="aoc">25 Eylül A.O.Ç. ye Ladin Dikiyoruz!!</option>
+                                                    <option value="ilgaz">28 Eylül Ilgaz'a Ceviz Dikiyoruz!!</option>
+                                                </select>
+
                                             </div>
                                         </div>
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label">Yeni Şifre</label>
-                                            <div class="col-md-9">
-                                            <input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="Şifre"
-                                                   name="password" id="register_password"/>
-                                            </div>
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="col-md-3 control-label">Yeni Şifre Tekrar</label>
-                                            <div class="col-md-9">
-                                            <input class="form-control placeholder-no-fix" type="password" autocomplete="off"
-                                                   placeholder="Şifrenizi yeniden girin" name="rpassword" id="yenisifretekrar" />
-                                            </div>
-                                        </div>
+
                                     </div>
                                     <div class="form-actions">
                                         <div class="row">
                                             <div class="col-md-offset-3 col-md-9">
-                                                <button type="button" onclick="updateuser()" class="btn green">Kaydet</button>
-                                                <button type="button" class="btn default">Cancel</button>
+                                                <button type="submit" class="btn green">Submit</button>
+                                                <button type="button" class="btn grey-salsa btn-outline">Cancel</button>
                                             </div>
                                         </div>
                                     </div>
                                 </form>
+                                <!-- END FORM-->
                             </div>
                         </div>
+                        <!-- END VALIDATION STATES-->
                     </div>
                 </div>
             </div>
+            <!-- END CONTENT BODY -->
         </div>
+        <!-- END CONTENT -->
+        <!-- BEGIN QUICK SIDEBAR -->
 
-
-
+        <!-- END QUICK SIDEBAR -->
     </div>
-    <!-- END CONTENT BODY -->
-</div>
-
-<!-- END CONTAINER -->
-<!-- BEGIN FOOTER -->
-<div class="page-footer">
-    <div class="page-footer-inner"> 2016 &copy; Metronic Theme By
-        <a target="_blank" href="http://keenthemes.com">Keenthemes</a> &nbsp;|&nbsp;
-        <a href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes" title="Purchase Metronic just for 27$ and get lifetime updates for free" target="_blank">Purchase Metronic!</a>
+    <!-- END CONTAINER -->
+    <!-- BEGIN FOOTER -->
+    <div class="page-footer">
+        <div class="page-footer-inner"> 2016 &copy; Metronic Theme By
+            <a target="_blank" href="http://keenthemes.com">Keenthemes</a> &nbsp;|&nbsp;
+            <a href="http://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes" title="Purchase Metronic just for 27$ and get lifetime updates for free" target="_blank">Purchase Metronic!</a>
+        </div>
+        <div class="scroll-to-top">
+            <i class="icon-arrow-up"></i>
+        </div>
     </div>
-    <div class="scroll-to-top">
-        <i class="icon-arrow-up"></i>
-    </div>
+    <!-- END FOOTER -->
 </div>
-<!-- END FOOTER -->
-</div>
-
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script type="text/javascript">
-
-    // Load the Visualization API and the corechart package.
-    google.charts.load('current', {'packages':['corechart']});
-
-    // Set a callback to run when the Google Visualization API is loaded.
-    google.charts.setOnLoadCallback(drawChart);
-
-    // Callback that creates and populates a data table,
-    // instantiates the pie chart, passes in the data and
-    // draws it.
-    function drawChart() {
-
-        // Create the data table.
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
-        data.addRows([
-            ['Mushrooms', 3],
-            ['Onions', 1],
-            ['Olives', 1],
-            ['Zucchini', 1],
-            ['Pepperoni', 2]
-        ]);
-
-        // Set chart options
-        var options = {'title':'How Much Pizza I Ate Last Night',
-            'width':400,
-            'height':300};
-
-        // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-    }
-</script>
-
 <!-- BEGIN QUICK NAV -->
+<div class="quick-nav-overlay"></div>
 <!-- END QUICK NAV -->
 <!--[if lt IE 9]>
 <script src="../assets/global/plugins/respond.min.js"></script>
@@ -282,42 +251,16 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="../assets/global/plugins/bootstrap-switch/js/bootstrap-switch.min.js" type="text/javascript"></script>
 <!-- END CORE PLUGINS -->
 <!-- BEGIN PAGE LEVEL PLUGINS -->
-<script src="../assets/global/plugins/moment.min.js" type="text/javascript"></script>
-<script src="../assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.js" type="text/javascript"></script>
-<script src="../assets/global/plugins/morris/morris.min.js" type="text/javascript"></script>
-<script src="../assets/global/plugins/morris/raphael-min.js" type="text/javascript"></script>
-<script src="../assets/global/plugins/counterup/jquery.waypoints.min.js" type="text/javascript"></script>
-<script src="../assets/global/plugins/counterup/jquery.counterup.min.js" type="text/javascript"></script>
-<script src="../assets/global/plugins/amcharts/amcharts/amcharts.js" type="text/javascript"></script>
-<script src="../assets/global/plugins/amcharts/amcharts/serial.js" type="text/javascript"></script>
-<script src="../assets/global/plugins/amcharts/amcharts/pie.js" type="text/javascript"></script>
-<script src="../assets/global/plugins/amcharts/amcharts/radar.js" type="text/javascript"></script>
-<script src="../assets/global/plugins/amcharts/amcharts/themes/light.js" type="text/javascript"></script>
-<script src="../assets/global/plugins/amcharts/amcharts/themes/patterns.js" type="text/javascript"></script>
-<script src="../assets/global/plugins/amcharts/amcharts/themes/chalk.js" type="text/javascript"></script>
-<script src="../assets/global/plugins/amcharts/ammap/ammap.js" type="text/javascript"></script>
-<script src="../assets/global/plugins/amcharts/ammap/maps/js/worldLow.js" type="text/javascript"></script>
-<script src="../assets/global/plugins/amcharts/amstockcharts/amstock.js" type="text/javascript"></script>
-<script src="../assets/global/plugins/fullcalendar/fullcalendar.min.js" type="text/javascript"></script>
-<script src="../assets/global/plugins/horizontal-timeline/horizontal-timeline.js" type="text/javascript"></script>
-<script src="../assets/global/plugins/flot/jquery.flot.min.js" type="text/javascript"></script>
-<script src="../assets/global/plugins/flot/jquery.flot.resize.min.js" type="text/javascript"></script>
-<script src="../assets/global/plugins/flot/jquery.flot.categories.min.js" type="text/javascript"></script>
-<script src="../assets/global/plugins/jquery-easypiechart/jquery.easypiechart.min.js" type="text/javascript"></script>
-<script src="../assets/global/plugins/jquery.sparkline.min.js" type="text/javascript"></script>
-<script src="../assets/global/plugins/jqvmap/jqvmap/jquery.vmap.js" type="text/javascript"></script>
-<script src="../assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.russia.js" type="text/javascript"></script>
-<script src="../assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.world.js" type="text/javascript"></script>
-<script src="../assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.europe.js" type="text/javascript"></script>
-<script src="../assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.germany.js" type="text/javascript"></script>
-<script src="../assets/global/plugins/jqvmap/jqvmap/maps/jquery.vmap.usa.js" type="text/javascript"></script>
-<script src="../assets/global/plugins/jqvmap/jqvmap/data/jquery.vmap.sampledata.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/select2/js/select2.full.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/jquery-validation/js/jquery.validate.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/jquery-validation/js/additional-methods.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/bootstrap-wizard/jquery.bootstrap.wizard.min.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL PLUGINS -->
 <!-- BEGIN THEME GLOBAL SCRIPTS -->
 <script src="../assets/global/scripts/app.min.js" type="text/javascript"></script>
 <!-- END THEME GLOBAL SCRIPTS -->
 <!-- BEGIN PAGE LEVEL SCRIPTS -->
-<script src="../assets/pages/scripts/dashboard.min.js" type="text/javascript"></script>
+<script src="../assets/pages/scripts/form-wizard.min.js" type="text/javascript"></script>
 <!-- END PAGE LEVEL SCRIPTS -->
 <!-- BEGIN THEME LAYOUT SCRIPTS -->
 <script src="../assets/layouts/layout/scripts/layout.min.js" type="text/javascript"></script>
@@ -325,7 +268,7 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="../assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
 <script src="../assets/layouts/global/scripts/quick-nav.min.js" type="text/javascript"></script>
 <!-- END THEME LAYOUT SCRIPTS -->
-</div></body>
+</body>
 
 <script>
     $(document).ready(
@@ -347,10 +290,10 @@ License: You must have a valid license purchased only from themeforest(the above
 
             anasayfa.href="/home/"+id;
 
+
             var genel=document.getElementById("genel");
 
             genel.href="/genel/"+id;
-
 
             var bireysel=document.getElementById("bireysel");
 
@@ -362,36 +305,6 @@ License: You must have a valid license purchased only from themeforest(the above
 
         });
 
-    function updateuser() {
-        var eskisifre = document.getElementById("eskisifre").value;
-        var yenisifre = (document.getElementById("register_password").value);
-        var yenisifreTekrar = (document.getElementById("yenisifretekrar").value);
-
-        if (yenisifre!=yenisifreTekrar){
-            alert("şifreler uyuşmuyor");
-        }
-        else{
-            $.ajax({
-                    type: "POST",
-                    url: "/sifredegisim",
-                    async: false,
-                    data: {
-                        es: (eskisifre),
-                        ys: yenisifre,
-                        yst: yenisifreTekrar
-                    },
-                    success: function (result) {
-                        alert("Başarıyla değiştirilmiştir");
-                        window.location = "/login"
-                    }
-                }
-            )
-        }
-    }
-
-
 </script>
 
-
-<!-- Div kapama eklendi body öncesine -->
 </html>

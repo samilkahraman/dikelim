@@ -17,4 +17,8 @@ public interface KisiRepository extends JpaRepository<Kisi, Long> {
 
     @Query("SELECT  k FROM Kisi k WHERE k.password=?1")
     Kisi findBySifre(String sifre);
+
+    @Query("DELETE FROM Kisi k WHERE k.kullaniciAdi=?1")
+    Kisi deleteByKullaniciAdi(String username);
+
     }
