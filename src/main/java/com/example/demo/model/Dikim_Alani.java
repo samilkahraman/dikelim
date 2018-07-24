@@ -11,12 +11,13 @@ public class Dikim_Alani {
     private String toprak_yapisi;
     private Long tahmini_sulama_sikligi;
     private Long dikim_alani_id;
-    private Sehir sehir;
     private Set<Agac_Turu> agac_turu_set;
     private Set<Agac> agacSet;
+    private Set<Etkinlik> etkinlikSet;
+    private Long sehir_id;
 
     @Id
-    @Column(name = "dikim_alani_id", columnDefinition = "serial")
+    @Column(name = "id", columnDefinition = "serial")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long getDikim_alani_id() {
         return dikim_alani_id;
@@ -25,6 +26,7 @@ public class Dikim_Alani {
     public void setDikim_alani_id(Long dikim_alani_id) {
         this.dikim_alani_id = dikim_alani_id;
     }
+
 
     public String getIsim() {
         return isim;
@@ -60,15 +62,6 @@ public class Dikim_Alani {
 
 
 
-    @ManyToOne
-    @JoinColumn(name = "sehir_id")
-    public Sehir getSehir() {
-        return sehir;
-    }
-
-    public void setSehir(Sehir sehir) {
-        this.sehir = sehir;
-    }
 
     @ManyToMany(mappedBy = "dikim_alani_set")
     public Set<Agac_Turu> getAgac_turu_set() {
@@ -86,5 +79,23 @@ public class Dikim_Alani {
 
     public void setAgacSet(Set<Agac> agacSet) {
         this.agacSet = agacSet;
+    }
+
+    @OneToMany(mappedBy = "dikim_alani")
+    public Set<Etkinlik> getEtkinlikSet() {
+        return etkinlikSet;
+    }
+
+    public void setEtkinlikSet(Set<Etkinlik> etkinlikSet) {
+        this.etkinlikSet = etkinlikSet;
+    }
+
+
+    public Long getSehir_id() {
+        return sehir_id;
+    }
+
+    public void setSehir_id(Long sehir_id) {
+        this.sehir_id = sehir_id;
     }
 }
