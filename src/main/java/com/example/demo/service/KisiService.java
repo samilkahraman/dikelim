@@ -10,5 +10,5 @@ public interface KisiService {
     Kisi findByKullaniciAdi(String username);
     Kisi findById(Long id);
     Kisi findBySifre(String sifre);
-    Kisi deleteByKullaniciAdi(String username);
+    int toplamKullanici();
 }

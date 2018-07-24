@@ -16,10 +16,7 @@ public class HomeController {
         return "home";
     }
 
-    @GetMapping(path = "genel/{id}")
-    public String genel(@PathVariable String id, Model model) {
-        return "genel";
-    }
+
 
     @GetMapping(path = "bireysel/{id}")
     public String bireysel(@PathVariable String id, Model model) {

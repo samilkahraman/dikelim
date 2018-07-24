@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class KisiServiceImpl implements KisiService {
+
     @Autowired
     KisiRepository kisiRepository;
 
@@ -14,8 +15,8 @@ public class KisiServiceImpl implements KisiService {
 
     @Override
     public void save(Kisi kisi) {
-            kisiRepository.save(kisi);
-        }
+        kisiRepository.save(kisi);
+    }
 
     @Override
     public Kisi findByKullaniciAdi(String username) {
@@ -23,17 +24,17 @@ public class KisiServiceImpl implements KisiService {
     }
 
     @Override
-    public Kisi deleteByKullaniciAdi(String username) {
-        return kisiRepository.deleteByKullaniciAdi(username);
-    }
 
-    @Override
     public Kisi findById(Long id) {
         return kisiRepository.findbyId(id);
     }
-     @Override
+    @Override
     public Kisi findBySifre(String sifre) {
         return kisiRepository.findBySifre(sifre);
     }
-}
 
+    @Override
+    public int toplamKullanici() {
+        return kisiRepository.toplamKullanici();
+    }
+}

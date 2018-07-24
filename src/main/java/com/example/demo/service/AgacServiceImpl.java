@@ -13,4 +13,9 @@ public class AgacServiceImpl implements AgacService {
     public void save(Agac agac) {
         agacRepository.save(agac);
     }
+
+    @Override
+    public int toplamAgac() {
+        return agacRepository.toplamAgac();
+    }
 }

@@ -6,4 +6,5 @@ public interface AgacService {
 
     void save(Agac agac);
 
+    int toplamAgac();
 }

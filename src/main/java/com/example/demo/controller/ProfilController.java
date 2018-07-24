@@ -26,6 +26,7 @@ public class ProfilController {
     public String registration(Model model) {
         model.addAttribute("userForm", new Kisi());
 
+
         return "profil";
     }
 

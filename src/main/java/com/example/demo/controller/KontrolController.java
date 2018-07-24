@@ -25,23 +25,5 @@ public class KontrolController {
     }
 
 
-    @RequestMapping(value = {"/kullaniciSilme"}, method = RequestMethod.POST)
-    public ResponseEntity<?> sifreupdate(@RequestParam(value = "silKullanici", required = true) String kullaniciAdi,
-                                         @RequestParam(value = "silKullaniciT", required = true) String kullaniciAdiT)
-    {
-        Kisi k=kisiService.findByKullaniciAdi(kullaniciAdi);
-        try {
 
-            if (k.getKullaniciAdi().equals(kullaniciAdiT)){
-                kisiService.deleteByKullaniciAdi(k.getKullaniciAdi());
-                return new ResponseEntity<String>("home", HttpStatus.OK);
-            }
-
-            else
-                return new ResponseEntity<String>("1", HttpStatus.OK);
-        }catch (NullPointerException e){
-            return new ResponseEntity<String>("1", HttpStatus.OK);
-
-        }
-    }
 }
