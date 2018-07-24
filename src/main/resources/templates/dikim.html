@@ -57,7 +57,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <div class="page-header-inner ">
             <!-- BEGIN LOGO -->
             <div class="page-logo">
-                <a id="abc">
+                <a href="index.html">
                     <img src="../assets/layouts/layout/img/logo.png" alt="logo" class="logo-default" /> </a>
                 <div class="menu-toggler sidebar-toggler">
                     <span></span>
@@ -108,35 +108,37 @@ License: You must have a valid license purchased only from themeforest(the above
                     <!-- DOC: To remove the search box from the sidebar you just need to completely remove the below "sidebar-search-wrapper" LI element -->
 
                     <li class="nav-item start ">
-                        <a id="anasayfa" class="nav-link ">
+
+
+                        <a href="/home" class="nav-link ">
                             <i class="icon-home"></i>
                             <span class="title">Anasayfa</span>
                         </a>
-                    </li>
 
+                    </li>
                     <li class="heading">
                         <h3 class="uppercase">Features</h3>
                     </li>
-
                     <li class="nav-item  ">
-                        <a id="genel" class="nav-link ">
+                        <a href="/home" class="nav-link ">
                             <i class="icon-diamond"></i>
-                            <span class="title">Genel Topluluk</span>
+                            <span class="title">Anasayfa</span>
                         </a>
-                    </li>
 
+                    </li>
                     <li class="nav-item  ">
-                        <a id="bireysel" class="nav-link ">
+                        <a href="/home" class="nav-link ">
                             <i class="icon-settings"></i>
-                            <span class="title">Bireysel</span>
+                            <span class="title">Anasayfa</span>
                         </a>
-                    </li>
 
+                    </li>
                     <li class="nav-item  ">
-                        <a id="profil" class="nav-link ">
+                        <a href="/home" class="nav-link ">
                             <i class="icon-user"></i>
-                            <span class="title">Profil Yönetimi</span>
+                            <span class="title">Anasayfa</span>
                         </a>
+
                     </li>
 
 
@@ -184,24 +186,24 @@ License: You must have a valid license purchased only from themeforest(the above
                                             <button class="close" data-close="alert"></button> Your form validation is successful! </div>
                                         <div class="form-group">
                                             <label class="control-label col-md-3">Adanan Kişi İsmi
-                                                <span class="required"> * </span>
+                                                <span class="required" > * </span>
                                             </label>
                                             <div class="col-md-4">
-                                                <input type="text" name="name" data-required="1" class="form-control" /> </div>
+                                                <input id="adanan_ismi" type="text" name="name" data-required="1" class="form-control" /> </div>
                                         </div>
                                         <div class="form-group">
                                             <label class="control-label col-md-3">Ağacınızın Adı
-                                                <span class="required"> * </span>
+                                                <span class="required" > * </span>
                                             </label>
                                             <div class="col-md-4">
-                                                <input type="text" name="name" data-required="1" class="form-control" /> </div>
+                                                <input id="agac_adi" type="text" name="name" data-required="1" class="form-control" /> </div>
                                         </div>
 
 
                                         <div class="form-group">
                                             <label class="control-label col-md-3">Dünya'ya Mesajınız&nbsp;&nbsp;</label>
                                             <div class="col-md-4">
-                                                <input name="occupation" type="text" class="form-control" />
+                                                <input id="message" name="occupation" type="text" class="form-control" />
                                                 <span class="help-block"> opsiyonel </span>
                                             </div>
                                         </div>
@@ -210,14 +212,14 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 <span class="required"> * </span>
                                             </label>
                                             <div class="col-md-4">
-                                                <select class="form-control" name="select">
+                                                <select id="agac_turu" class="form-control" name="select">
                                                     <option value="">Seçiniz...</option>
-                                                    <option value="Kayin">Kayın</option>
-                                                    <option value="Mese">Meşe</option>
-                                                    <option value="Cam">Çam</option>
-                                                    <option value="Kavak">Kavak</option>
-                                                    <option value="Ladin">Ladin</option>
-                                                    <option value="Ceviz">Ceviz</option>
+                                                    <option value="1">Kayın</option>
+                                                    <option value="2">Meşe</option>
+                                                    <option value="3">Çam</option>
+                                                    <option value="4">Kavak</option>
+                                                    <option value="5">Ladin</option>
+                                                    <option value="6">Ceviz</option>
                                                 </select>
                                             </div>
                                         </div>
@@ -226,12 +228,12 @@ License: You must have a valid license purchased only from themeforest(the above
                                                 <span class="required"> * </span>
                                             </label>
                                             <div class="col-md-4">
-                                                <select class="form-control" name="select_multi" multiple>
-                                                    <option value="odtu">Odtü Ormanı</option>
-                                                    <option value="aoc">A.O.Ç.</option>
-                                                    <option value="ilgaz">Ilgaz Milli Parkı</option>
-                                                    <option value="Guney">Güney Köyü</option>
-                                                    <option value="IzmirParki">İzmir Milli Parkı</option>
+                                                <select id="alan" class="form-control" name="select_multi" multiple>
+                                                    <option value="1">Odtü Ormanı</option>
+                                                    <option value="2">Atatürk Orman Çiftliği</option>
+                                                    <option value="3">Ilgaz Milli Parkı</option>
+                                                    <option value="4">Güneyköy</option>
+                                                    <option value="5">Izmir Milli Parkı</option>
                                                 </select>
 
                                             </div>
@@ -241,8 +243,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                     <div class="form-actions">
                                         <div class="row">
                                             <div class="col-md-offset-3 col-md-9">
-                                                <button type="submit" class="btn green">Submit</button>
-                                                <button type="button" class="btn grey-salsa btn-outline">Cancel</button>
+                                                <button type="button" onclick="dikagac()" class="btn green">Dik</button>
+                                                <button type="button" class="btn grey-salsa btn-outline">Geri dön</button>
                                             </div>
                                         </div>
                                     </div>
@@ -259,9 +261,6 @@ License: You must have a valid license purchased only from themeforest(the above
         <!-- END CONTENT -->
         <!-- BEGIN QUICK SIDEBAR -->
 
-        <!-- END QUICK SIDEBAR -->
-    </div>
-    <!-- END CONTAINER -->
     <!-- BEGIN FOOTER -->
     <div class="page-footer">
         <div class="page-footer-inner"> 2016 &copy; Metronic Theme By
@@ -307,44 +306,50 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="../assets/layouts/layout/scripts/demo.min.js" type="text/javascript"></script>
 <script src="../assets/layouts/global/scripts/quick-sidebar.min.js" type="text/javascript"></script>
 <script src="../assets/layouts/global/scripts/quick-nav.min.js" type="text/javascript"></script>
-<!-- END THEME LAYOUT SCRIPTS -->
-</body>
 
+    <!-- END THEME LAYOUT SCRIPTS -->
+</body>
 <script>
     $(document).ready(
         function () {
             var token = $("meta[name='_csrf']").attr("content");
-
             $.ajaxSetup({
                 headers: {
                     "X-CSRF-Token": token
                 }
             });
-            var url=window.location.href
-            var id=url.substring(url.lastIndexOf('/')+1);
-            var a=document.getElementById("abc");
-
-            a.href="/dikim/"+id;
-
-            var anasayfa=document.getElementById("anasayfa");
-
-            anasayfa.href="/home/"+id;
-
-
-            var genel=document.getElementById("genel");
-
-            genel.href="/genel/"+id;
-
-            var bireysel=document.getElementById("bireysel");
-
-            bireysel.href="/bireysel/"+id;
-
-            var profil=document.getElementById("profil");
-
-            profil.href="/profil/"+id;
-
-        });
-
+        })
+    function dikagac () {
+        var adanan = document.getElementById("adanan_ismi").value;
+        var agac = document.getElementById("agac_adi").value;
+        var tur= document.getElementById("agac_turu").value;
+        var mesaj = document.getElementById("message").value;
+        var alan = document.getElementById("alan").value;
+        var url=window.location.href;
+        var id=url.substring(url.lastIndexOf("/")+1);
+        $.ajax({
+                type: "POST",
+                url: "/agacdik",
+                async: false,
+                data: {
+                    adanan_ismi: adanan,
+                    agac: agac,
+                    tur:tur,
+                    mesaj:mesaj,
+                    alan:alan,
+                    id:id
+                },
+            success:function (result) {
+                if(result=="0"){
+                    alert("İşleminiz başarıyla tamamlanmıştır");
+                    window.location="/home/"+id;
+                }
+                else{
+                    alert("Bir hata meydana geldi")
+                }
+            }
+            }
+        )
+    }
 </script>
-
 </html>

@@ -1,11 +1,12 @@
 package com.example.demo.model;
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.Set;
 
 @Entity
 @Table(name="agac")
-public abstract class Agac {
+public  class Agac {
 
     private long id;
     private Agac_Turu agac_turu;
@@ -17,6 +18,7 @@ public abstract class Agac {
     private Date dikilme_tarihi;
     private String adanan_kisi;
     private Etkinlik etkinlik;
+    private String mesaj;
 
     @Id
     @Column(name = "id", columnDefinition = "serial")
@@ -60,7 +62,7 @@ public abstract class Agac {
     }
 
     @ManyToOne
-    @JoinColumn(name = "diken_id")
+    @JoinColumn(columnDefinition="integer",name = "diken_id",nullable = true)
     public Kisi getDiken_kisi() {
         return diken_kisi;
     }
@@ -103,12 +105,20 @@ public abstract class Agac {
     }
 
     @ManyToOne
-    @JoinColumn(name = "etkinlik_id")
+    @JoinColumn(columnDefinition="integer",name = "etkinlik_id",nullable = true)
     public Etkinlik getEtkinlik() {
         return etkinlik;
     }
 
     public void setEtkinlik(Etkinlik etkinlik) {
         this.etkinlik = etkinlik;
+    }
+
+    public String getMesaj() {
+        return mesaj;
+    }
+
+    public void setMesaj(String mesaj) {
+        this.mesaj = mesaj;
     }
 }
