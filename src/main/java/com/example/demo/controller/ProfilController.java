@@ -11,7 +11,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
-
+import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
@@ -31,8 +31,8 @@ public class ProfilController {
 
     @RequestMapping(value = {"/sifredegisim"}, method = RequestMethod.POST)
     public ResponseEntity<?> sifreupdate(@RequestParam(value = "es", required = true) String eskis,
-                                    @RequestParam(value = "ys", required = true) String yenis,
-                                     @RequestParam(value = "yst", required = true) String yenist)
+                                         @RequestParam(value = "ys", required = true) String yenis,
+                                         @RequestParam(value = "yst", required = true) String yenist)
     {
         Kisi k=kisiService.findBySifre(eskis);
         try {
