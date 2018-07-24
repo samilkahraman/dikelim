@@ -8,6 +8,6 @@ public interface KisiService {
     void save(Kisi kisi);
 
     Kisi findByKullaniciAdi(String username);
-
     Kisi findById(Long id);
+    Kisi findBySifre(String sifre);
 }

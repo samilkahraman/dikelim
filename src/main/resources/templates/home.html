@@ -56,7 +56,7 @@ License: You must have a valid license purchased only from themeforest(the above
         <div class="page-header-inner ">
             <!-- BEGIN LOGO -->
             <div class="page-logo">
-                <a href="/home">
+                <a id="abc">
                     <img src="../assets/layouts/layout/img/logo.png" alt="logo" class="logo-default" /> </a>
                 <div class="menu-toggler sidebar-toggler">
                     <span></span>
@@ -105,34 +105,32 @@ License: You must have a valid license purchased only from themeforest(the above
                     <!-- DOC: To remove the search box from the sidebar you just need to completely remove the below "sidebar-search-wrapper" LI element -->
 
                     <li class="nav-item start ">
-
-
-                                <a href="/home" class="nav-link ">
-                                    <i class="icon-home"></i>
-                                    <span class="title">Anasayfa</span>
-                                </a>
-
+                        <a id="anasayfa" class="nav-link ">
+                            <i class="icon-home"></i>
+                            <span class="title">Anasayfa</span>
+                        </a>
                     </li>
+
                     <li class="heading">
                         <h3 class="uppercase">Features</h3>
                     </li>
 
                     <li class="nav-item  ">
-                        <a href="/genel" class="nav-link ">
+                        <a id="genel" class="nav-link ">
                             <i class="icon-diamond"></i>
                             <span class="title">Genel Topluluk</span>
                         </a>
                     </li>
 
                     <li class="nav-item  ">
-                        <a href="/bireysel" class="nav-link ">
+                        <a id="bireysel" class="nav-link ">
                             <i class="icon-settings"></i>
                             <span class="title">Bireysel</span>
                         </a>
                     </li>
 
                     <li class="nav-item  ">
-                        <a href="/profil" class="nav-link ">
+                        <a id="profil" class="nav-link ">
                             <i class="icon-user"></i>
                             <span class="title">Profil Yönetimi</span>
                         </a>
@@ -159,7 +157,7 @@ License: You must have a valid license purchased only from themeforest(the above
                     <div class="col-md-12">
                         <h1>DİKELİM</h1>
                         <h2>DAHA YEŞİL YARINLAR İÇİN</h2>
-                        <a class="btn btn-danger"  id="abc"  >HEMEN AĞAÇ DİK</a>
+                        <a class = "btn btn-danger" id="abc2" > HEMEN AĞAÇ DİK </a>
                     </div>
                 </div>
                 <!-- END CONTENT HEADER -->
@@ -178,7 +176,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                   <span> Topluluk olarak dünyaya katkımız
                                             <br> için aşağıdaki linki kullanabilirsiniz <br></span>
                                 <br>
-                                         <a class="btn btn-danger" href="/genel">Topluluk</a>
+                                         <a class="btn btn-danger" id="genel2">Topluluk</a>
                             </div>
                         </div>
                     </div>
@@ -194,7 +192,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                   <span>Bireysel olarak dünyaya katkınız
                                             <br> için aşağıdaki linki kullanabilirsiniz <br></span>
                                 <br>
-                                <a href="/bireysel" class="btn btn-danger">Bireysel</a>
+                                <a id="bireysel2" class="btn btn-danger">Bireysel</a>
                             </div>
                         </div>
                     </div>
@@ -211,7 +209,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                         <span> Hesap ayarlarınızın düzenlenmesi ve kontrolü
                                             <br> için aşağıdaki linki kullanabilirsiniz <br></span>
                                 <br>
-                                <a href="/profil" class="btn btn-danger">Profil</a>
+                                <a id="profil2" class="btn btn-danger">Profil</a>
 
                             </div>
                         </div>
@@ -282,11 +280,43 @@ License: You must have a valid license purchased only from themeforest(the above
             var url=window.location.href
             var id=url.substring(url.lastIndexOf('/')+1);
             var a=document.getElementById("abc");
-            alert(a.href);
-            a.href="/dikim/"+id;
-            alert(a.href);
 
-        })
+            a.href="/dikim/"+id;
+
+            var ab=document.getElementById("abc2");
+
+            ab.href="/dikim/"+id;
+
+            var anasayfa=document.getElementById("anasayfa");
+
+            anasayfa.href="/home/"+id;
+
+            var genel=document.getElementById("genel");
+
+            genel.href="/genel/"+id;
+
+            var genel2=document.getElementById("genel2");
+
+            genel2.href="/genel/"+id;
+
+
+            var bireysel=document.getElementById("bireysel");
+
+            bireysel.href="/bireysel/"+id;
+
+            var bireysel2=document.getElementById("bireysel2");
+
+            bireysel2.href="/bireysel/"+id;
+
+            var profil=document.getElementById("profil");
+
+            profil.href="/profil/"+id;
+
+            var profil2=document.getElementById("profil2");
+
+            profil2.href="/profil/"+id;
+
+        });
 
     function agacdik() {
 

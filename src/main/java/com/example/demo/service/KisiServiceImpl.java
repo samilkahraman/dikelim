@@ -23,8 +23,13 @@ public class KisiServiceImpl implements KisiService {
     }
 
     @Override
+
     public Kisi findById(Long id) {
         return kisiRepository.findbyId(id);
+    }
+     @Override
+    public Kisi findBySifre(String sifre) {
+        return kisiRepository.findBySifre(sifre);
     }
 }
 
