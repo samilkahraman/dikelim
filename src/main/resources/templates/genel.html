@@ -166,10 +166,11 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="display">
                                 <div class="number">
                                     <h3 class="font-green-sharp">
-                                        <span data-counter="counterup" data-value="7800" >0</span>
+                                        <span data-counter="counterup"  data-value= "342" id="mydiv2" >0</span>
                                         <small class="font-green-sharp"></small>
                                     </h3>
                                     <small>DİKİLEN TOPLAM AĞAÇ</small>
+
                                 </div>
                                 <div class="icon">
                                     <i class="icon-pie-chart"></i>
@@ -193,7 +194,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="display">
                                 <div class="number">
                                     <h3 class="font-red-haze">
-                                        <span data-counter="counterup" data-value="1349">0</span>
+                                        <span data-counter="counterup" data-value="-">0</span>
                                     </h3>
                                     <small>GÜNLÜK OKSİJEN ÜRETİMİMİZ</small>
                                 </div>
@@ -219,7 +220,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="display">
                                 <div class="number">
                                     <h3 class="font-blue-sharp">
-                                        <span data-counter="counterup" data-value="567"></span>
+                                        <span data-counter="counterup" data-value="-"></span>
                                     </h3>
                                     <small>CO2 - O2 DÖNÜŞÜMÜ</small>
                                 </div>
@@ -245,9 +246,10 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="display">
                                 <div class="number">
                                     <h3 class="font-purple-soft">
-                                        <span data-counter="counterup" data-value="276"></span>
+                                        <span data-counter="counterup" data-value="276" id="mydiv"></span>
+
                                     </h3>
-                                    <small>KULLANICI SAYIMIZ</small>
+                                    <small>KULLANICI SAYIMIZ </small>
                                 </div>
                                 <div class="icon">
                                     <i class="icon-user"></i>
@@ -462,6 +464,12 @@ License: You must have a valid license purchased only from themeforest(the above
                         <div id="chart_div"></div>
 
                     </div>
+                    <div class="col-lg-12 col-xs-12 col-sm-12">
+                        <input th:value=" ${mesaj}" id="test" type="hidden"/>
+                        <input th:value=" ${agacSayi}" id="agac" type="hidden"/>
+
+                    </div>
+
                 </div>
 
 
@@ -624,8 +632,17 @@ License: You must have a valid license purchased only from themeforest(the above
 
             profil.href="/profil/"+id;
 
+
         });
 
-</script>
 
+</script>
+<script>
+    var ab = $('#mydiv').data('value'); //getter
+    var ab2 = $('#mydiv2').data('value'); //getter
+    var cd= document.getElementById("test").value;
+    var cd2= document.getElementById("agac").value;
+    $('#mydiv').attr("data-value",cd); //setter
+    $('#mydiv2').attr("data-value",cd2); //setter
+</script>
 </html>
