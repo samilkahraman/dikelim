@@ -13,4 +13,5 @@ public interface Dikim_AlaniService {
     Dikim_Alani findByDikim_alani_id(Long id);
 
 
+
 }

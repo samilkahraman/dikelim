@@ -60,6 +60,7 @@ public class DikimController {
             yeniagac.setMesaj(mesaj);
             yeniagac.setSatin_alinma_tarihi(now);
             yeniagac.setSatin_alan_kisi(kisiService.findById(new Long(id)));
+            yeniagac.setDikildi_mi(false);
             agacService.save(yeniagac);
 
             return new ResponseEntity<String>("0", HttpStatus.OK);

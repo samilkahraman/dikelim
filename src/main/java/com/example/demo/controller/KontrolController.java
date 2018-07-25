@@ -18,12 +18,10 @@ public class KontrolController {
     KisiService kisiService;
 
     @RequestMapping(value = "/kontrol", method = RequestMethod.GET)
-    public String registration(Model model) {
+    public String kontrol(Model model) {
         model.addAttribute("userForm", new Kisi());
 
         return "kontrol";
     }
 
-
-
-}
+    }

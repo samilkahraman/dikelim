@@ -19,6 +19,7 @@ public  class Agac {
     private String adanan_kisi;
     private Etkinlik etkinlik;
     private String mesaj;
+    private Boolean dikildi_mi;
 
     @Id
     @Column(name = "id", columnDefinition = "serial")
@@ -120,5 +121,13 @@ public  class Agac {
 
     public void setMesaj(String mesaj) {
         this.mesaj = mesaj;
+    }
+
+    public Boolean getDikildi_mi() {
+        return dikildi_mi;
+    }
+
+    public void setDikildi_mi(Boolean dikildi_mi) {
+        this.dikildi_mi = dikildi_mi;
     }
 }

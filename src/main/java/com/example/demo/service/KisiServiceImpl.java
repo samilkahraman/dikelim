@@ -5,6 +5,8 @@ import com.example.demo.repository.KisiRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class KisiServiceImpl implements KisiService {
 
@@ -36,5 +38,10 @@ public class KisiServiceImpl implements KisiService {
     @Override
     public int toplamKullanici() {
         return kisiRepository.toplamKullanici();
+    }
+
+    @Override
+    public List<Kisi> findAll() {
+        return kisiRepository.findAll();
     }
 }

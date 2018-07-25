@@ -15,6 +15,7 @@ public class Etkinlik {
     private String aciklama;
     private Dikim_Alani dikim_alani;
     private Set<Agac> agacSet;
+    private Set<Kisi> kisiSet;
 
     @Id
     @Column(name = "id", columnDefinition = "serial")
@@ -78,9 +79,21 @@ public class Etkinlik {
         this.agacSet = agacSet;
     }
 
-    @Override
+    @ManyToMany
+    @JoinTable(name = "katilim", joinColumns = @JoinColumn(name = "etkinlik_id"), inverseJoinColumns = @JoinColumn(name = "kisi_id"))
+    public Set<Kisi> getKisiSet() {
+        return kisiSet;
+    }
+
+    public void setKisiSet(Set<Kisi> kisiSet) {
+        this.kisiSet = kisiSet;
+    }
+
+    /*@Override
     public String toString() {
         return this.getIsim()+" "+this.getAciklama()+ " "+this.getKatılım_sayisi()+" "+this.getDikim_alani().getIsim();
 
-    }
+    }*/
+
+
 }
