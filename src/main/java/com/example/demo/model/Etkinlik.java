@@ -77,4 +77,10 @@ public class Etkinlik {
     public void setAgacSet(Set<Agac> agacSet) {
         this.agacSet = agacSet;
     }
+
+    @Override
+    public String toString() {
+        return this.getIsim()+" "+this.getAciklama()+ " "+this.getKatılım_sayisi()+" "+this.getDikim_alani().getIsim();
+
+    }
 }

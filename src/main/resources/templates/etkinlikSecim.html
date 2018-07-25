@@ -300,6 +300,18 @@ License: You must have a valid license purchased only from themeforest(the above
                 }
 
             });
+            $.ajax({
+                    type: "GET",
+                    url: "/getetkinlik",
+                    async: false,
+                    success:function (result) {
+                        console.log(result)
+                    }
+                }
+            )
+
+
+
             var url=window.location.href
             var id=url.substring(url.lastIndexOf('/')+1);
             var a=document.getElementById("abc");
