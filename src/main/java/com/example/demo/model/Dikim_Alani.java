@@ -1,5 +1,7 @@
 package com.example.demo.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -15,7 +17,6 @@ public class Dikim_Alani {
     private Set<Agac> agacSet;
     private Set<Etkinlik> etkinlikSet;
     private Long sehir_id;
-
     @Id
     @Column(name = "id", columnDefinition = "serial")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -59,10 +60,6 @@ public class Dikim_Alani {
     public void setTahmini_sulama_sikligi(Long tahmini_sulama_sikligi) {
         this.tahmini_sulama_sikligi = tahmini_sulama_sikligi;
     }
-
-
-
-
     @ManyToMany(mappedBy = "dikim_alani_set")
     public Set<Agac_Turu> getAgac_turu_set() {
         return agac_turu_set;
@@ -89,7 +86,6 @@ public class Dikim_Alani {
     public void setEtkinlikSet(Set<Etkinlik> etkinlikSet) {
         this.etkinlikSet = etkinlikSet;
     }
-
 
     public Long getSehir_id() {
         return sehir_id;
