@@ -50,10 +50,21 @@ public class EtkinlikSecimController {
 
     }
 
+    public static class InnerSehir{
+        private Long id;
+        private String name;
+        private String bolge;
+
+        public InnerSehir(Long id, String name, String bolge) {
+            this.id = id;
+            this.name = name;
+            this.bolge = bolge;
+        }
+    }
+
     public static class InnerAgac {
         private Long id;
         private String adanan;
-        private String dikim_tarihi;
         private String isim;
         private String mesaj;
         private String alım_tarihi;
@@ -63,10 +74,9 @@ public class EtkinlikSecimController {
         private String satin_alan;
 
 
-        public InnerAgac(Long id, String adanan, String dikim_tarihi, String isim, String mesaj, String alım_tarihi, String agac_turu, String dikim_alani, String etkinlik, String satin_alan) {
+        public InnerAgac(Long id, String adanan, String isim, String mesaj, String alım_tarihi, String agac_turu, String dikim_alani, String etkinlik, String satin_alan) {
             this.id = id;
             this.adanan = adanan;
-            this.dikim_tarihi = dikim_tarihi;
             this.isim = isim;
             this.mesaj = mesaj;
             this.alım_tarihi = alım_tarihi;
@@ -96,6 +106,12 @@ public class EtkinlikSecimController {
         }
     }
 
+    public static class InnerBolge{
+        private Long id;
+        private String name;
+
+    }
+
 
     @RequestMapping(value = "/etkinlikSecim", method = RequestMethod.GET)
     public String registration(Model model) {
@@ -122,15 +138,15 @@ public class EtkinlikSecimController {
         List<Agac> agaclist = agacService.findAll();
         List<InnerAgac> inneragaclist = new ArrayList<>();
         for (Agac a : agaclist) {
-            inneragaclist.add(new InnerAgac(a.getId(), a.getAdanan_kisi(), a.getDikilme_tarihi().toString(), a.getIsim(), a.getMesaj(), a.getSatin_alinma_tarihi().toString(),
+            inneragaclist.add(new InnerAgac(a.getId(), a.getAdanan_kisi(), a.getIsim(), a.getMesaj(), a.getSatin_alinma_tarihi().toString(),
                     a.getAgac_turu().getIsim(), a.getDikim_alani().getIsim(),
-                    a.getEtkinlik().getIsim(), a.getSatin_alan_kisi().getIsim()));
-        }
+                    a.getEtkinlik().getIsim(), a.getSatin_alan_kisi().getIsim()+" "+a.getSatin_alan_kisi().getSoyisim()));
+                   }
         return new ResponseEntity<List<InnerAgac>>(inneragaclist, HttpStatus.OK);
 
 
     }
-
+/*
     @RequestMapping(value = {"/getdikimalani"}, method = RequestMethod.GET)
     public ResponseEntity<?> getdikimalani() {
         List<Dikim_Alani> dikimAlaniList = dikim_alaniService.findAll();
@@ -152,7 +168,13 @@ public class EtkinlikSecimController {
     }
     @RequestMapping(value = {"/getsehir"}, method = RequestMethod.GET)
     public ResponseEntity<?> getsehir() {
-        return new ResponseEntity<List<Sehir>>(sehirService.findAll(),HttpStatus.OK);
+        List<Sehir> sehirList = sehirService.findAll();
+        List<InnerSehir> innersehirList = new ArrayList<>();
+
+        for (Sehir sehir:sehirList){
+            innersehirList.add(new InnerSehir(sehir.getId(),sehir.getName(),sehir.getBolge().getName()));
+        }
+        return new ResponseEntity<List<InnerSehir>>(innersehirList,HttpStatus.OK);
 
     }
     @RequestMapping(value = {"/getagacturu"}, method = RequestMethod.GET)
@@ -165,5 +187,10 @@ public class EtkinlikSecimController {
         return new ResponseEntity<List<Kisi>>(kisiService.findAll(),HttpStatus.OK);
     }
 
+    @RequestMapping(value = {"/getdikilirler"}, method = RequestMethod.GET)
+    public ResponseEntity<?> getdikilirler() {
+        return new ResponseEntity<List<Kisi>>(kisiService.findAll(),HttpStatus.OK);
+    }
+*/
 
 }
