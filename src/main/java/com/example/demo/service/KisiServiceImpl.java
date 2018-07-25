@@ -44,4 +44,9 @@ public class KisiServiceImpl implements KisiService {
     public List<Kisi> findAll() {
         return kisiRepository.findAll();
     }
+
+    @Override
+    public void delete(Kisi kisi) {
+
+    }
 }

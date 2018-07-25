@@ -15,4 +15,6 @@ public interface KisiService {
     int toplamKullanici();
 
     List<Kisi> findAll();
+
+    void delete(Kisi kisi);
 }
