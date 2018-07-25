@@ -336,19 +336,37 @@ License: You must have a valid license purchased only from themeforest(the above
 
         });
 
-    function agacdik() {
-
-        /*
+    function dikagac () {
+        var adanan = document.getElementById("adanan_ismi").value;
+        var agac = document.getElementById("agac_adi").value;
+        var tur= document.getElementById("agac_turu").value;
+        var mesaj = document.getElementById("message").value;
+        var alan = document.getElementById("alan").value;
+        var url=window.location.href;
+        var id=url.substring(url.lastIndexOf("/")+1);
         $.ajax({
                 type: "POST",
-                url: "/dikimurl",
+                url: "/agacdik",
                 async: false,
                 data: {
-                    url:"dikim/"+id
+                    adanan_ismi: adanan,
+                    agac: agac,
+                    tur:tur,
+                    mesaj:mesaj,
+                    alan:alan,
+                    id:id
                 },
+                success:function (result) {
+                    if(result=="0"){
+                        alert("İşleminiz başarıyla tamamlanmıştır");
+                        window.location="/home/"+id;
+                    }
+                    else{
+                        alert("Bir hata meydana geldi")
+                    }
+                }
             }
         )
-*/
     }
 
 </script>
