@@ -8,4 +8,6 @@ public interface AgacRepository extends JpaRepository<Agac,Long> {
 
     @Query("SELECT COUNT(id) FROM Agac ")
     int toplamAgac();
+
+    //@Query("Select  Count(ag.adanan_kisi) from Agac as ag, Dikim_Alani as dk, Sehir as sh, Bolge as bg where ag.dikim_alani_id=dk.dikim_alani_id and dk.sehir_id=sh.id and sh.bolge_id=bg.id and bg.id=0")
 }

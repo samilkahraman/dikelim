@@ -13,6 +13,7 @@ public class Kisi {
     private Date dogum_tarihi;
     private String isim;
     private String soyisim;
+    private Set<Etkinlik> etkinlikSet;
 
     @Column(unique = true)
     private String kullaniciAdi;
@@ -88,6 +89,15 @@ public class Kisi {
 
     public void setSatin_alinan_agacSet(Set<Agac> satin_alinan_agacSet) {
         this.satin_alinan_agacSet = satin_alinan_agacSet;
+    }
+
+    @ManyToMany(mappedBy = "kisiSet")
+    public Set<Etkinlik> getEtkinlikSet() {
+        return etkinlikSet;
+    }
+
+    public void setEtkinlikSet(Set<Etkinlik> etkinlikSet) {
+        this.etkinlikSet = etkinlikSet;
     }
 }
 
