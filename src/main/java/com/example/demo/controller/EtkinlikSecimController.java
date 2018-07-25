@@ -27,24 +27,7 @@ public class EtkinlikSecimController {
     @Autowired
     EtkinlikService etkinlikService;
 
-    public static class InnerEtkinlik {
-        public Long id;
-        public String aciklama;
-        public String isim;
-        public Long katilim_sayisi;
-        public String tarih;
-        public String dikimAlani;
 
-        public InnerEtkinlik(Long id, String aciklama, String isim, Long katilim_sayisi, String tarih, String dikimAlani){
-            this.id=id;
-            this.aciklama=aciklama;
-            this.isim=isim;
-            this.katilim_sayisi=katilim_sayisi;
-            this.tarih=tarih;
-            this.dikimAlani=dikimAlani;
-        }
-
-    }
 
     @RequestMapping(value = "/etkinlikSecim", method = RequestMethod.GET)
     public String registration(Model model) {
@@ -52,18 +35,7 @@ public class EtkinlikSecimController {
 
         return "etkinlikSecim";
     }
-    @RequestMapping(value = {"/getetkinlik"}, method = RequestMethod.GET)
-    public ResponseEntity<?> deneme() {
-        List<Etkinlik> etkinlikarray = etkinlikService.findAll();
-        List<InnerEtkinlik> innerEtkinlikList = new ArrayList<>();
-        for(Etkinlik e:etkinlikarray){
-            innerEtkinlikList.add(new InnerEtkinlik(e.getId(),e.getAciklama(),e.getIsim(),
-                    e.getKatılım_sayisi(),e.getTarih().toString(),e.getDikim_alani().getIsim()));
-        }
-        return new ResponseEntity<List<InnerEtkinlik>>(innerEtkinlikList, HttpStatus.OK);
 
-
-    }
 
 
 
