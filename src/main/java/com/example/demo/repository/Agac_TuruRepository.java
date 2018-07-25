@@ -13,4 +13,6 @@ public interface Agac_TuruRepository extends JpaRepository<Agac_Turu,Long> {
 
     @Query("SELECT  k FROM Agac_Turu k WHERE k.isim=?1")
     Agac_Turu findbyname(String name);
+
+    //@Query("SELECT at.isim FROM Agac_Turu at JOIN at.dikim_alani_set da")
 }

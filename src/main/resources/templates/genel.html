@@ -294,7 +294,7 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <div class="portlet box blue">
                                     <div class="portlet-title">
                                         <div class="caption">
-                                            <i class="fa fa-cogs"></i>Bordered Bootstrap 3.0 Responsive Table </div>
+                                            <i class="fa fa-cogs"></i>Bölgelere Göre Ağaç Sayılarımız </div>
                                         <div class="tools">
                                             <a href="javascript:;" class="collapse"> </a>
                                             <a href="#portlet-config" data-toggle="modal" class="config"> </a>
@@ -307,42 +307,76 @@ License: You must have a valid license purchased only from themeforest(the above
                                             <table class="table table-bordered">
                                                 <thead>
                                                 <tr>
-                                                    <th> # </th>
-                                                    <th> Table heading </th>
-                                                    <th> Table heading </th>
-                                                    <th> Table heading </th>
-                                                    <th> Table heading </th>
-                                                    <th> Table heading </th>
-                                                    <th> Table heading </th>
+                                                    <th>  </th>
+                                                    <th ><p th:text="${bolgeAdi0}"></p>  </th>
+                                                    <th> <p th:text="${bolgeAdi1}"></p></th>
+                                                    <th> <p th:text="${bolgeAdi2}"></p> </th>
+                                                    <th><p th:text="${bolgeAdi3}"></p> </th>
+                                                    <th> <p th:text="${bolgeAdi4}"></p></th>
+                                                    <th> <p th:text="${bolgeAdi5}"></p></th>
+                                                    <th> <p th:text="${bolgeAdi6}"></p> </th>
                                                 </tr>
                                                 </thead>
                                                 <tbody>
                                                 <tr>
-                                                    <td> 1 </td>
-                                                    <td> Table cell </td>
-                                                    <td> Table cell </td>
-                                                    <td> Table cell </td>
-                                                    <td> Table cell </td>
-                                                    <td> Table cell </td>
-                                                    <td> Table cell </td>
+                                                    <td> Kayın </td>
+                                                    <td> <p th:text="${iAKayin}"></p></td>
+                                                    <td> <p th:text="${dAKayin}"></p> </td>
+                                                    <td> <p th:text="${kKayin}"></p> </td>
+                                                    <td> <p th:text="${gDAKayin}"></p> </td>
+                                                    <td> <p th:text="${aKayin}"></p>  </td>
+                                                    <td> <p th:text="${eKayin}"></p> </td>
+                                                    <td> <p th:text="${mKayin}"></p> </td>
                                                 </tr>
                                                 <tr>
-                                                    <td> 2 </td>
-                                                    <td> Table cell </td>
-                                                    <td> Table cell </td>
-                                                    <td> Table cell </td>
-                                                    <td> Table cell </td>
-                                                    <td> Table cell </td>
-                                                    <td> Table cell </td>
+                                                    <td> Meşe </td>
+                                                    <td> <p th:text="${iAMese}"></p> </td>
+                                                    <td> <p th:text="${dAMese}"></p></td>
+                                                    <td> <p th:text="${kMese}"></p> </td>
+                                                    <td> <p th:text="${gDAMese}"></p>  </td>
+                                                    <td> <p th:text="${aMese}"></p> </td>
+                                                    <td> <p th:text="${eMese}"> </td>
+                                                    <td> <p th:text="${mMese}"> </td>
                                                 </tr>
                                                 <tr>
-                                                    <td> 3 </td>
-                                                    <td> Table cell </td>
-                                                    <td> Table cell </td>
-                                                    <td> Table cell </td>
-                                                    <td> Table cell </td>
-                                                    <td> Table cell </td>
-                                                    <td> Table cell </td>
+                                                    <td> Çam </td>
+                                                    <td> <p th:text="${iACam}"></p> </td>
+                                                    <td> <p th:text="${dACam}"></p> </td>
+                                                    <td> <p th:text="${kCam}"></p></td>
+                                                    <td> <p th:text="${gDACam}"></p>  </td>
+                                                    <td> <p th:text="${aCam}"></p> </td>
+                                                    <td> <p th:text="${eCam}"></p> </td>
+                                                    <td> <p th:text="${mCam}"> </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> Kavak </td>
+                                                    <td> <p th:text="${iAKavak}"></p> </td>
+                                                    <td> <p th:text="${dAKavak}"></p> </td>
+                                                    <td> <p th:text="${kKavak}"></p> </td>
+                                                    <td> <p th:text="${gDAKavak}"></p>  </td>
+                                                    <td> <p th:text="${aKavak}"></p> </td>
+                                                    <td> <p th:text="${eKavak}"></p> </td>
+                                                    <td> <p th:text="${mKavak}"> </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> Ladin </td>
+                                                    <td> <p th:text="${iALadin}"></p> </td>
+                                                    <td><p th:text="${dALadin}"></p> </td>
+                                                    <td> <p th:text="${kLadin}"></p>  </td>
+                                                    <td><p th:text="${gDALadin}"></p>  </td>
+                                                    <td> <p th:text="${aLadin}"></p></td>
+                                                    <td> <p th:text="${eLadin}"></p> </td>
+                                                    <td> <p th:text="${mLadin}"></p> </td>
+                                                </tr>
+                                                <tr>
+                                                    <td> Ceviz </td>
+                                                    <td> <p th:text="${iACeviz}"></p> </td>
+                                                    <td> <p th:text="${dACeviz}"></p> </td>
+                                                    <td> <p th:text="${kCeviz}"></p>  </td>
+                                                    <td> <p th:text="${gDACeviz}"></p> </td>
+                                                    <td><p th:text="${aCeviz}"></p> </td>
+                                                    <td><p th:text="${eCeviz}"></p> </td>
+                                                    <td><p th:text="${mCeviz}"></p> </td>
                                                 </tr>
                                                 </tbody>
                                             </table>
@@ -467,6 +501,7 @@ License: You must have a valid license purchased only from themeforest(the above
                     <div class="col-lg-12 col-xs-12 col-sm-12">
                         <input th:value=" ${mesaj}" id="test" type="hidden"/>
                         <input th:value=" ${agacSayi}" id="agac" type="hidden"/>
+                        <input th:value=" ${iAMese}" id="iam" type="hidden"/>
 
                     </div>
 
@@ -515,18 +550,20 @@ License: You must have a valid license purchased only from themeforest(the above
 
         // Create the data table.
         var data = new google.visualization.DataTable();
+        var icanadolu=document.getElementById("iam").value;
+       // alert(icanadolu);
         data.addColumn('string', 'Topping');
         data.addColumn('number', 'Slices');
         data.addRows([
-            ['Mushrooms', 3],
-            ['Onions', 1],
-            ['Olives', 1],
-            ['Zucchini', 1],
-            ['Pepperoni', 2]
+            ['İç Anadolu', icanadolu],
+            ['Marmara', icanadolu],
+            ['Doğu Anadolu', icanadolu],
+            ['Güney Doğu Anadolu', icanadolu],
+            ['Akdeniz', icanadolu]
         ]);
 
         // Set chart options
-        var options = {'title':'How Much Pizza I Ate Last Night',
+        var options = {'title':'Bölgelerdeki ağaç oranları',
             'width':800,
             'width':800,
             'height':300};

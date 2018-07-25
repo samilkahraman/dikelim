@@ -77,6 +77,7 @@ public  class Agac {
         this.satin_alinma_tarihi = satin_alinma_tarihi;
     }
 
+
     public String getAdanan_kisi() {
         return adanan_kisi;
     }

@@ -638,80 +638,68 @@ License: You must have a valid license purchased only from themeforest(the above
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
 
 <script type="text/javascript">
-
     var app = angular.module('myApp', []);
     app.controller('myCtrl', function ($scope, $http) {
-
         $scope.getAgacBilgi = function () {
             $http.get("/getagac").then(function mySuccess(response) {
                 $scope.butunAgaclar = response.data;
             }, function myError(response) {
             });
         };
-
         $scope.getAgacTuruBilgi = function () {
             $http.get("/getagacturu").then(function mySuccess(response) {
                 $scope.butunAgacTurleri = response.data;
             }, function myError(response) {
             });
         };
-
         $scope.getBolgeBilgi = function () {
             $http.get("/getbolge").then(function mySuccess(response) {
                 $scope.butunBolgeler = response.data;
             }, function myError(response) {
             });
         };
-
         $scope.getDikilirlerBilgi = function () {
             $http.get("/getdikilirler").then(function mySuccess(response) {
                 $scope.butunDikilirler = response.data;
             }, function myError(response) {
             });
         };
-
         $scope.getDikimAlaniBilgi = function () {
             $http.get("/getdikimalani").then(function mySuccess(response) {
                 $scope.butunDikimAlanlari = response.data;
             }, function myError(response) {
             });
         };
-
         $scope.getEtkinlikBilgi = function () {
             $http.get("/getetkinlik").then(function mySuccess(response) {
                 $scope.butunEtkinlikler = response.data;
             }, function myError(response) {
             });
         };
-
         $scope.getKisiBilgi = function () {
             $http.get("/getkisi").then(function mySuccess(response) {
                 $scope.butunKisiler = response.data;
             }, function myError(response) {
             });
         };
-
         $scope.getKullaniciBilgi = function () {
             $http.get("/getKullanici").then(function mySuccess(response) {
                 $scope.butunKullanicilar = response.data;
             }, function myError(response) {
             });
         };
-
         $scope.getSehirBilgi = function () {
             $http.get("/getsehir").then(function mySuccess(response) {
                 $scope.butunSehirler = response.data;
             }, function myError(response) {
             });
         };
-
         $scope.getKatilimBilgi = function () {
             $http.get("/getkatilim").then(function mySuccess(response) {
                 $scope.butunKatilimlar = response.data;
             }, function myError(response) {
             });
         };
-
         $scope.silAgacTuru = function (a, b) {
             if (confirm("Bu ağaç türünü silmek istediğinize emin misiniz? : "+ a + b  )) {
                 $.ajax({
@@ -739,7 +727,6 @@ License: You must have a valid license purchased only from themeforest(the above
                 return false;
             }
         };
-
         $scope.silAgac = function (a, b) {
             if (confirm("Bu ağacı silmek istediğinize emin misiniz? : "+ a + b  )) {
                 $.ajax({
@@ -767,7 +754,6 @@ License: You must have a valid license purchased only from themeforest(the above
                 return false;
             }
         };
-
         $scope.silSehir = function (a, b) {
             if (confirm("Bu şehri silmek istediğinize emin misiniz? : "+ a + b  )) {
                 $.ajax({
@@ -795,7 +781,6 @@ License: You must have a valid license purchased only from themeforest(the above
                 return false;
             }
         };
-
         $scope.silBolge = function (a, b) {
             if (confirm("Bu bolgeyi silmek istediğinize emin misiniz? : "+ a + b  )) {
                 $.ajax({
@@ -823,7 +808,6 @@ License: You must have a valid license purchased only from themeforest(the above
                 return false;
             }
         };
-
         $scope.silKisi = function (a, b) {
             if (confirm("Bu kisiyi silmek istediğinize emin misiniz? : "+ a + b  )) {
                 $.ajax({
@@ -851,7 +835,6 @@ License: You must have a valid license purchased only from themeforest(the above
                 return false;
             }
         };
-
         $scope.silEtkinlik = function (a, b) {
             if (confirm("Bu etkinliği silmek istediğinize emin misiniz? : "+ a + b  )) {
                 $.ajax({
@@ -879,7 +862,6 @@ License: You must have a valid license purchased only from themeforest(the above
                 return false;
             }
         };
-
         $scope.silDikimAlani= function (a, b) {
             if (confirm("Bu dikim alanını silmek istediğinize emin misiniz? : "+ a + b  )) {
                 $.ajax({
@@ -907,7 +889,6 @@ License: You must have a valid license purchased only from themeforest(the above
                 return false;
             }
         };
-
         $scope.silDikilirler= function (a, b) {
             if (confirm("Bu dikilebilirlik ilişkisini silmek istediğinize emin misiniz? : "+ a + b  )) {
                 $.ajax({
@@ -936,10 +917,6 @@ License: You must have a valid license purchased only from themeforest(the above
                 return false;
             }
         };
-
-
-
-
         $scope.getEtkinlikBilgi();
         //$scope.getKullaniciBilgi();
         $scope.getSehirBilgi();
@@ -950,20 +927,15 @@ License: You must have a valid license purchased only from themeforest(the above
         $scope.getAgacTuruBilgi();
         $scope.getAgacBilgi();
         $scope.getKatilimBilgi();
-
     });
-
     // Load the Visualization API and the corechart package.
     google.charts.load('current', {'packages':['corechart']});
-
     // Set a callback to run when the Google Visualization API is loaded.
     google.charts.setOnLoadCallback(drawChart);
-
     // Callback that creates and populates a data table,
     // instantiates the pie chart, passes in the data and
     // draws it.
     function drawChart() {
-
         // Create the data table.
         var data = new google.visualization.DataTable();
         data.addColumn('string', 'Topping');
@@ -975,12 +947,10 @@ License: You must have a valid license purchased only from themeforest(the above
             ['Zucchini', 1],
             ['Pepperoni', 2]
         ]);
-
         // Set chart options
         var options = {'title':'How Much Pizza I Ate Last Night',
             'width':400,
             'height':300};
-
         // Instantiate and draw our chart, passing in some options.
         var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
         chart.draw(data, options);
@@ -1052,7 +1022,6 @@ License: You must have a valid license purchased only from themeforest(the above
     $(document).ready(
         function () {
             var token = $("meta[name='_csrf']").attr("content");
-
             $.ajaxSetup({
                 headers: {
                     "X-CSRF-Token": token
@@ -1061,33 +1030,19 @@ License: You must have a valid license purchased only from themeforest(the above
             var url=window.location.href;
             var id=url.substring(url.lastIndexOf('/')+1);
             var a=document.getElementById("abc");
-
             a.href="/dikim/"+id;
-
             var anasayfa=document.getElementById("anasayfa");
-
             anasayfa.href="/home/"+id;
-
             var genel=document.getElementById("genel");
-
             genel.href="/genel/"+id;
-
-
             var bireysel=document.getElementById("bireysel");
-
             bireysel.href="/bireysel/"+id;
-
             var profil=document.getElementById("profil");
-
             profil.href="/profil/"+id;
-
         });
-
     function deleteUser() {
         var silinecekKullaniciAdi = document.getElementById("silinecekKullanıcıAdi").value;
         var silinecekKullaniciAdiT = document.getElementById("silinecekKullanıcıAdiTekrar").value;
-
-
         if (silinecekKullaniciAdi!=silinecekKullaniciAdiT){
             alert("kullanıcı adları uyuşmuyor");
         }
@@ -1108,8 +1063,6 @@ License: You must have a valid license purchased only from themeforest(the above
             )
         }
     }
-
-
 </script>
 
 

@@ -11,5 +11,6 @@ public interface BolgeService {
 
     List<Bolge> findAll();
 
+String[] bolgeler();
 
 }
