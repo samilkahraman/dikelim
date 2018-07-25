@@ -149,7 +149,7 @@ License: You must have a valid license purchased only from themeforest(the above
         </div>
         <!-- END SIDEBAR -->
         <!-- BEGIN CONTENT -->
-        <div class="page-content-wrapper">
+        <div ng-app="myApp" ng-controller="myCtrl" class="page-content-wrapper">
             <!-- BEGIN CONTENT BODY -->
             <div class="page-content">
                 <!-- BEGIN PAGE HEADER-->
@@ -160,7 +160,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 
                 <div class="row">
-                    <div class="col-lg-12 col-xs-12 col-sm-12">
+                    <div class="col-lg-6 col-xs-6 col-sm-6">
                         <div class="portlet light bordered">
                             <div class="portlet-title">
                                 <div class="caption">
@@ -201,7 +201,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                 </form>
                             </div>
                         </div>
-
+                    </div>
+                    <div class="col-lg-6 col-xs-6 col-sm-6">
                         <div class="portlet light bordered">
                             <div class="portlet-title">
                                 <div class="caption">
@@ -248,7 +249,10 @@ License: You must have a valid license purchased only from themeforest(the above
                                 </form>
                             </div>
                         </div>
-
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-xs-6 col-sm-6">
                         <div class="portlet light bordered">
                             <div class="portlet-title">
                                 <div class="caption">
@@ -293,13 +297,250 @@ License: You must have a valid license purchased only from themeforest(the above
                                 </form>
                             </div>
                         </div>
+                    </div>
 
-                        <div ng-app="myApp" ng-controller="myCtrl" class="portlet light bordered">
+                    <div class="col-lg-6 col-xs-6 col-sm-6">
+                        <div  class="portlet light bordered">
                             <div style="overflow-x: auto">
                                 <div style="margin-bottom: 10px">
                                     <div class="col-md-4 portlet-title">
                                         <div class="caption">
-                                            <span class="caption-subject font-dark sbold uppercase">ETKİNLİKLER</span>
+                                            <span class="caption-subject font-dark sbold uppercase">bölge</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <table class=" table table-bordered table-striped table-hover">
+                                    <tr>
+                                        <th> ID</th>
+                                        <th> Name</th>
+                                        <th> Özellikler</th>
+                                    </tr>
+                                    <tr ng-repeat="x in butunBolgeler ">
+                                        <td> {{x.id }}</td>
+                                        <td> {{x.name }}</td>
+                                        <td> {{x.ozellikler }}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div  class="portlet light bordered">
+                        <div style="overflow-x: auto">
+                            <div style="margin-bottom: 10px">
+                                <div class="col-md-4 portlet-title">
+                                    <div class="caption">
+                                        <span class="caption-subject font-dark sbold uppercase">Ağaçlar</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <table class=" table table-bordered table-striped table-hover">
+                                <tr>
+                                    <th> ID</th>
+                                    <th> Adanan Kişi</th>
+                                    <th> Dikilme Tarihi</th>
+                                    <th> Ağacın İsmi</th>
+                                    <th> Dünyaya Mesaj</th>
+                                    <th> Satın Alan Kişi</th>
+                                    <th> Satın Alınma Tarihi</th>
+                                    <th> Ağacın Türü</th>
+                                    <th> Diken Kişi</th>
+                                    <th> Dikim Alani</th>
+                                    <th> Etkinlik</th>
+                                </tr>
+                                <tr ng-repeat="x in butunAgaclar ">
+                                    <td> {{x.id }}</td>
+                                    <td> {{x.adananKisi }}</td>
+                                    <td> {{x.dikilmeTarihi }}</td>
+                                    <td> {{x.agacinIsmi }}</td>
+                                    <td> {{x.DunyayaMesaj }}</td>
+                                    <td> {{x.satinAlanKisi }}</td>
+                                    <td> {{x.satinAlinmaTarihi }}</td>
+                                    <td> {{x.agacinTuru }}</td>
+                                    <td> {{x.dikenKisi }}</td>
+                                    <td> {{x.dikimAlani }}</td>
+                                    <td> {{x.etkinlik }}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-xs-6 col-sm-6">
+                        <div  class="portlet light bordered">
+                            <div style="overflow-x: auto">
+                                <div style="margin-bottom: 10px">
+                                    <div class="col-md-4 portlet-title">
+                                        <div class="caption">
+                                            <span class="caption-subject font-dark sbold uppercase">ağaç türü</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <table class=" table table-bordered table-striped table-hover">
+                                    <tr>
+                                        <th> ID</th>
+                                        <th> Açıklama</th>
+                                        <th> İsim</th>
+                                    </tr>
+                                    <tr ng-repeat="x in butunAgacTurleri ">
+                                        <td> {{x.id }}</td>
+                                        <td> {{x.aciklama }}</td>
+                                        <td> {{x.isim }}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xs-6 col-sm-6">
+                        <div  class="portlet light bordered">
+                            <div style="overflow-x: auto">
+                                <div style="margin-bottom: 10px">
+                                    <div class="col-md-4 portlet-title">
+                                        <div class="caption">
+                                            <span class="caption-subject font-dark sbold uppercase">dikilirler</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <table class=" table table-bordered table-striped table-hover">
+                                    <tr>
+                                        <th> Ağaç Türü</th>
+                                        <th> Dikim Alanı</th>
+                                    </tr>
+                                    <tr ng-repeat="x in butunDikilirler ">
+                                        <td> {{x.agacTuru }}</td>
+                                        <td> {{x.dikimAlani }}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div  class="portlet light bordered">
+                    <div style="overflow-x: auto">
+                        <div style="margin-bottom: 10px">
+                            <div class="col-md-4 portlet-title">
+                                <div class="caption">
+                                    <span class="caption-subject font-dark sbold uppercase">DİKİM ALANLARI</span>
+                                </div>
+                            </div>
+                        </div>
+                        <table class=" table table-bordered table-striped table-hover">
+                            <tr>
+                                <th> ID</th>
+                                <th> İsim</th>
+                                <th> Kapasite</th>
+                                <th> Tahmini Sulama Sıklığı</th>
+                                <th> Toprak Yapısı</th>
+                                <th> Şehir</th>
+                            </tr>
+                            <tr ng-repeat="x in butunDikimAlanlari ">
+                                <td> {{x.id }}</td>
+                                <td> {{x.aciklama }}</td>
+                                <td> {{x.isim }}</td>
+                                <td> {{x.katilim_sayisi }}</td>
+                                <td> {{x.tarih }}</td>
+                                <td> {{x.dikimAlani }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div  class="portlet light bordered">
+                    <div style="overflow-x: auto">
+                        <div style="margin-bottom: 10px">
+                            <div class="col-md-4 portlet-title">
+                                <div class="caption">
+                                    <span class="caption-subject font-dark sbold uppercase">ETKİNLİKLER</span>
+                                </div>
+                            </div>
+                        </div>
+                        <table class=" table table-bordered table-striped table-hover">
+                            <tr>
+                                <th> ID</th>
+                                <th> Acıklama</th>
+                                <th> İsim</th>
+                                <th> Katılım Sayısı</th>
+                                <th> Tarih</th>
+                                <th> Dikim Alanı İsim</th>
+                            </tr>
+                            <tr ng-repeat="x in butunEtkinlikler ">
+                                <td> {{x.id }}</td>
+                                <td> {{x.aciklama }}</td>
+                                <td> {{x.isim }}</td>
+                                <td> {{x.katilim_sayisi }}</td>
+                                <td> {{x.tarih }}</td>
+                                <td> {{x.dikimAlani }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div  class="portlet light bordered">
+                    <div style="overflow-x: auto">
+                        <div style="margin-bottom: 10px">
+                            <div class="col-md-4 portlet-title">
+                                <div class="caption">
+                                    <span class="caption-subject font-dark sbold uppercase">Kişi</span>
+                                </div>
+                            </div>
+                        </div>
+                        <table class=" table table-bordered table-striped table-hover">
+                            <tr>
+                                <th> ID</th>
+                                <th> İsim</th>
+                                <th> Soyisim</th>
+                                <th> Doğum Tarihi</th>
+                                <th> Kullanıcı Adı</th>
+                                <th> Şifre </th>
+                            </tr>
+                            <tr ng-repeat="x in butunKisiler ">
+                                <td> {{x.id }}</td>
+                                <td> {{x.isim }}</td>
+                                <td> {{x.soyisim }}</td>
+                                <td> {{x.dogumTarihi }}</td>
+                                <td> {{x.username }}</td>
+                                <td> {{x.password }}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-xs-6 col-sm-6">
+                        <div  class="portlet light bordered">
+                            <div style="overflow-x: auto">
+                                <div style="margin-bottom: 10px">
+                                    <div class="col-md-4 portlet-title">
+                                        <div class="caption">
+                                            <span class="caption-subject font-dark sbold uppercase">Kullanıcı</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <table class=" table table-bordered table-striped table-hover">
+                                    <tr>
+                                        <th> Id </th>
+                                        <th> İsim </th>
+                                        <th> Soyisim </th>
+                                        <th> Puan </th>
+                                    </tr>
+                                    <tr ng-repeat="x in butunKullanicilar ">
+                                        <td> {{x.id }}</td>
+                                        <td> {{x.isim }}</td>
+                                        <td> {{x.soyisim }}</td>
+                                        <td> {{x.puan }}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xs-6 col-sm-6">
+                        <div  class="portlet light bordered">
+                            <div style="overflow-x: auto">
+                                <div style="margin-bottom: 10px">
+                                    <div class="col-md-4 portlet-title">
+                                        <div class="caption">
+                                            <span class="caption-subject font-dark sbold uppercase">Şehir</span>
                                         </div>
                                     </div>
                                 </div>
@@ -307,34 +548,23 @@ License: You must have a valid license purchased only from themeforest(the above
                                 <table class=" table table-bordered table-striped table-hover">
                                     <tr>
                                         <th> ID</th>
-                                        <th> Acıklama</th>
-                                        <th> İsim</th>
-                                        <th> Katılım Sayısı</th>
-                                        <th> Tarih</th>
-                                        <th> Dikim Alanı İsim</th>
+                                        <th> Name</th>
+                                        <th> Bölge</th>
                                     </tr>
 
-                                    <tr ng-repeat="x in butunEtkinlikler ">
+                                    <tr ng-repeat="x in butunSehirler ">
 
                                         <td> {{x.id }}</td>
-                                        <td> {{x.aciklama }}</td>
-                                        <td> {{x.isim }}</td>
-                                        <td> {{x.katilim_sayisi }}</td>
-                                        <td> {{x.tarih }}</td>
-                                        <td> {{x.dikimAlani }}</td>
+                                        <td> {{x.name }}</td>
+                                        <td> {{x.bolge }}</td>
                                     </tr>
                                 </table>
                             </div>
                         </div>
-
-
                     </div>
                 </div>
             </div>
         </div>
-
-
-
     </div>
     <!-- END CONTENT BODY -->
 </div>
@@ -360,17 +590,78 @@ License: You must have a valid license purchased only from themeforest(the above
 
     var app = angular.module('myApp', []);
     app.controller('myCtrl', function ($scope, $http) {
-        $scope.butunEtkinlikler = "";
+
+        $scope.getAgacBilgi = function () {
+            $http.get("/getagac").then(function mySuccess(response) {
+                $scope.butunAgaclar = response.data;
+            }, function myError(response) {
+            });
+        };
+        $scope.getAgacBilgi();
+
+        $scope.getAgacTuruBilgi = function () {
+            $http.get("/getagacturu").then(function mySuccess(response) {
+                $scope.butunAgacTurleri = response.data;
+            }, function myError(response) {
+            });
+        };
+        $scope.getAgacTuruBilgi();
+
+        $scope.getBolgeBilgi = function () {
+            $http.get("/getbolge").then(function mySuccess(response) {
+                $scope.butunBolgeler = response.data;
+            }, function myError(response) {
+            });
+        };
+        $scope.getBolgeBilgi();
+
+        $scope.getDikilirlerBilgi = function () {
+            $http.get("/getDikilirler").then(function mySuccess(response) {
+                $scope.butunDikilirler = response.data;
+            }, function myError(response) {
+            });
+        };
+        $scope.getDikilirlerBilgi();
+
+        $scope.getDikimAlaniBilgi = function () {
+            $http.get("/getdikimalani").then(function mySuccess(response) {
+                $scope.butunDikimAlanlari = response.data;
+            }, function myError(response) {
+            });
+        };
+        $scope.getDikimAlaniBilgi();
 
         $scope.getEtkinlikBilgi = function () {
             $http.get("/getetkinlik").then(function mySuccess(response) {
                 $scope.butunEtkinlikler = response.data;
-                console.log($scope.allDepartments);
             }, function myError(response) {
             });
         };
         $scope.getEtkinlikBilgi();
 
+        $scope.getKisiBilgi = function () {
+            $http.get("/getkisi").then(function mySuccess(response) {
+                $scope.butunKisiler = response.data;
+            }, function myError(response) {
+            });
+        };
+        $scope.getKisiBilgi();
+
+        $scope.getKullaniciBilgi = function () {
+            $http.get("/getKullanici").then(function mySuccess(response) {
+                $scope.butunKullanicilar = response.data;
+            }, function myError(response) {
+            });
+        };
+        $scope.getKullaniciBilgi();
+
+        $scope.getSehirBilgi = function () {
+            $http.get("/getsehir").then(function mySuccess(response) {
+                $scope.butunSehirler = response.data;
+            }, function myError(response) {
+            });
+        };
+        $scope.getSehirBilgi();
     });
 
     // Load the Visualization API and the corechart package.

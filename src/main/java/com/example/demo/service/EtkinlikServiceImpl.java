@@ -15,4 +15,9 @@ public class EtkinlikServiceImpl implements EtkinlikService {
     public List<Etkinlik> findAll() {
         return etkinlikRepository.findAll();
     }
+
+    @Override
+    public Etkinlik findbyId(Long id) {
+        return etkinlikRepository.findbyId(id);
+    }
 }

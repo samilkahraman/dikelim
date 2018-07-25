@@ -8,7 +8,7 @@ import java.util.Set;
 @Entity
 @Table(name = "sehir")
 public class Sehir {
-    private String id;
+    private Long id;
     private String name;
     private Bolge bolge;
 
@@ -16,11 +16,11 @@ public class Sehir {
     @Id
     @Column(name = "id", columnDefinition = "serial")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

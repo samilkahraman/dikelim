@@ -4,10 +4,7 @@ import com.example.demo.model.Agac;
 import com.example.demo.model.Dikim_Alani;
 import com.example.demo.model.Kisi;
 import com.example.demo.model.Kullanici;
-import com.example.demo.service.AgacService;
-import com.example.demo.service.Agac_turuService;
-import com.example.demo.service.Dikim_AlaniService;
-import com.example.demo.service.KisiService;
+import com.example.demo.service.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -34,6 +31,8 @@ public class DikimController {
     AgacService agacService;
     @Autowired
     KisiService kisiService;
+    @Autowired
+    EtkinlikService etkinlikService;
     @RequestMapping(value = "/dikim", method = RequestMethod.GET)
     public String registration(Model model) {
         model.addAttribute("userForm", new Kisi());
@@ -57,10 +56,10 @@ public class DikimController {
             yeniagac.setAgac_turu(agac_turuService.findbyId(new Long(turId)));
             Dikim_Alani dikim_alani = (dikim_alaniService.findByDikim_alani_id(new Long(alan)));
             yeniagac.setDikim_alani(dikim_alani);
+            yeniagac.setEtkinlik(etkinlikService.findbyId(new Long(alan)));
             yeniagac.setMesaj(mesaj);
             yeniagac.setSatin_alinma_tarihi(now);
             yeniagac.setSatin_alan_kisi(kisiService.findById(new Long(id)));
-            yeniagac.setDikildi_mi(false);
             agacService.save(yeniagac);
 
             return new ResponseEntity<String>("0", HttpStatus.OK);
