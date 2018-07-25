@@ -15,12 +15,25 @@ public class BolgeServiceImpl implements BolgeService {
     BolgeRepository bolgeRepository;
 
     @Override
-    public Optional<Bolge> findById(Long id) {
-        return bolgeRepository.findById(id);
-    }
 
-    @Override
-    public List<Bolge> findAll() {
-        return bolgeRepository.findAll();
+    public Bolge FindById(Long id) {
+        return bolgeRepository.FindById(id);
     }
-}
+        @Override
+        public String[] bolgeler () {
+            String[] test = bolgeRepository.bolgeler();
+
+            return test;
+        }
+
+
+        @Override
+        public List<Bolge> findAll () {
+            return bolgeRepository.findAll();
+        }
+
+        @Override
+        public void delete (Bolge bolge){
+            bolgeRepository.delete(bolge);
+        }
+    }

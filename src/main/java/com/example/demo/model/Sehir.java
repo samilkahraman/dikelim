@@ -11,6 +11,7 @@ public class Sehir {
     private Long id;
     private String name;
     private Bolge bolge;
+    private Set<Dikim_Alani> dikimAlan;
 
 
     @Id
@@ -42,4 +43,11 @@ public class Sehir {
         this.bolge = bolge;
     }
 
+    @OneToMany(mappedBy = "sehir", cascade = CascadeType.ALL)
+    public Set<Dikim_Alani> getDikimAlan() {
+        return dikimAlan;
+    }
+    public void setDikimAlan(Set<Dikim_Alani> dikimAlan) {
+        this.dikimAlan = dikimAlan;
+    }
 }

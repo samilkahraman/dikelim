@@ -14,4 +14,7 @@ public interface Agac_turuService {
 
 
     List<Agac_Turu> findAll();
+
+    void delete(Agac_Turu agac_turu);
+
 }

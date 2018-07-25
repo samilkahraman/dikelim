@@ -33,6 +33,8 @@ public class DikimController {
     KisiService kisiService;
     @Autowired
     EtkinlikService etkinlikService;
+
+
     @RequestMapping(value = "/dikim", method = RequestMethod.GET)
     public String registration(Model model) {
         model.addAttribute("userForm", new Kisi());
@@ -59,7 +61,7 @@ public class DikimController {
             yeniagac.setEtkinlik(etkinlikService.findbyId(new Long(alan)));
             yeniagac.setMesaj(mesaj);
             yeniagac.setSatin_alinma_tarihi(now);
-            yeniagac.setSatin_alan_kisi(kisiService.findById(new Long(id)));
+            yeniagac.setSatin_alan_kisi(kisiService.FindById(new Long(id)));
             agacService.save(yeniagac);
 
             return new ResponseEntity<String>("0", HttpStatus.OK);

@@ -1,20 +1,18 @@
 package com.example.demo.controller;
 
+
 import com.example.demo.model.Agac;
 import com.example.demo.model.Etkinlik;
+
 import com.example.demo.model.Kisi;
 import com.example.demo.service.AgacService;
 import com.example.demo.service.Dikim_AlaniService;
 import com.example.demo.service.KisiService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.List;
 
 @Controller
 public class BireyselController {
