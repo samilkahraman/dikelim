@@ -63,7 +63,7 @@ public class KisiServiceImpl implements KisiService {
 
     @Override
     public void delete(Kisi kisi) {
-        kisiRepository.delete(kisi);
+
 
     }
 }
