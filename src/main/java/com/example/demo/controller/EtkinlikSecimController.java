@@ -58,13 +58,12 @@ public class EtkinlikSecimController {
         private String mesaj;
         private String alım_tarihi;
         private String agac_turu;
-        private String diken;
         private String dikim_alani;
         private String etkinlik;
         private String satin_alan;
 
 
-        public InnerAgac(Long id, String adanan, String dikim_tarihi, String isim, String mesaj, String alım_tarihi, String agac_turu, String diken, String dikim_alani, String etkinlik, String satin_alan) {
+        public InnerAgac(Long id, String adanan, String dikim_tarihi, String isim, String mesaj, String alım_tarihi, String agac_turu, String dikim_alani, String etkinlik, String satin_alan) {
             this.id = id;
             this.adanan = adanan;
             this.dikim_tarihi = dikim_tarihi;
@@ -72,7 +71,6 @@ public class EtkinlikSecimController {
             this.mesaj = mesaj;
             this.alım_tarihi = alım_tarihi;
             this.agac_turu = agac_turu;
-            this.diken = diken;
             this.dikim_alani = dikim_alani;
             this.etkinlik = etkinlik;
             this.satin_alan = satin_alan;
@@ -125,7 +123,7 @@ public class EtkinlikSecimController {
         List<InnerAgac> inneragaclist = new ArrayList<>();
         for (Agac a : agaclist) {
             inneragaclist.add(new InnerAgac(a.getId(), a.getAdanan_kisi(), a.getDikilme_tarihi().toString(), a.getIsim(), a.getMesaj(), a.getSatin_alinma_tarihi().toString(),
-                    a.getAgac_turu().getIsim(), a.getDiken_kisi().getIsim(), a.getDikim_alani().getIsim(),
+                    a.getAgac_turu().getIsim(), a.getDikim_alani().getIsim(),
                     a.getEtkinlik().getIsim(), a.getSatin_alan_kisi().getIsim()));
         }
         return new ResponseEntity<List<InnerAgac>>(inneragaclist, HttpStatus.OK);

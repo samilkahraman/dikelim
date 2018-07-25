@@ -19,7 +19,6 @@ public class Kisi {
     private String kullaniciAdi;
 
     private String password;
-    private Set<Agac> dikilen_agacSet;
     private Set<Agac> satin_alinan_agacSet;
 
     @Id
@@ -73,14 +72,6 @@ public class Kisi {
         this.password = password;
     }
 
-    @OneToMany(mappedBy = "diken_kisi", cascade = CascadeType.ALL)
-    public Set<Agac> getDikilen_agacSet() {
-        return dikilen_agacSet;
-    }
-
-    public void setDikilen_agacSet(Set<Agac> dikilen_agacSet) {
-        this.dikilen_agacSet = dikilen_agacSet;
-    }
 
     @OneToMany(mappedBy = "satin_alan_kisi", cascade = CascadeType.ALL)
     public Set<Agac> getSatin_alinan_agacSet() {
