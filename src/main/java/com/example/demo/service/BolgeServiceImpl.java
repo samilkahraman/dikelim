@@ -15,6 +15,16 @@ public class BolgeServiceImpl implements BolgeService {
     BolgeRepository bolgeRepository;
 
     @Override
+    public String[] bolgeler() {
+        String[] test=bolgeRepository.bolgeler();
+       // String[] bolgeler = new String[bolgeRepository.bolgeler().length];
+       // for(int i=0;i<bolgeRepository.bolgeler().length;i++){
+        //    bolgeler[i]=test
+        //}
+        return test;
+    }
+
+    @Override
     public Optional<Bolge> findById(Long id) {
         return bolgeRepository.findById(id);
     }

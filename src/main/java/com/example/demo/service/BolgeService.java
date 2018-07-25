@@ -10,4 +10,5 @@ public interface BolgeService {
     Optional<Bolge> findById(Long id);
 
     List<Bolge> findAll();
+String[] bolgeler();
 }
