@@ -294,6 +294,40 @@ License: You must have a valid license purchased only from themeforest(the above
                             </div>
                         </div>
 
+                        <div ng-app="myApp" ng-controller="myCtrl" class="portlet light bordered">
+                            <div style="overflow-x: auto">
+                                <div style="margin-bottom: 10px">
+                                    <div class="col-md-4 portlet-title">
+                                        <div class="caption">
+                                            <span class="caption-subject font-dark sbold uppercase">ETKİNLİKLER</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <table class=" table table-bordered table-striped table-hover">
+                                    <tr>
+                                        <th> ID</th>
+                                        <th> Acıklama</th>
+                                        <th> İsim</th>
+                                        <th> Katılım Sayısı</th>
+                                        <th> Tarih</th>
+                                        <th> Dikim Alanı İsim</th>
+                                    </tr>
+
+                                    <tr ng-repeat="x in butunEtkinlikler ">
+
+                                        <td> {{x.id }}</td>
+                                        <td> {{x.aciklama }}</td>
+                                        <td> {{x.isim }}</td>
+                                        <td> {{x.katilim_sayisi }}</td>
+                                        <td> {{x.tarih }}</td>
+                                        <td> {{x.dikimAlani }}</td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+
+
                     </div>
                 </div>
             </div>
@@ -320,7 +354,24 @@ License: You must have a valid license purchased only from themeforest(the above
 </div>
 
 <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
 <script type="text/javascript">
+
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function ($scope, $http) {
+        $scope.butunEtkinlikler = "";
+
+        $scope.getEtkinlikBilgi = function () {
+            $http.get("/getetkinlik").then(function mySuccess(response) {
+                $scope.butunEtkinlikler = response.data;
+                console.log($scope.allDepartments);
+            }, function myError(response) {
+            });
+        };
+        $scope.getEtkinlikBilgi();
+
+    });
 
     // Load the Visualization API and the corechart package.
     google.charts.load('current', {'packages':['corechart']});
