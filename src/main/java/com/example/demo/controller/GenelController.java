@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.Date;
+
 @Controller
 public class GenelController {
     @Autowired
@@ -181,6 +183,8 @@ public class GenelController {
         String bolgeAdi="";
         String tpk=tp+"";
         String agacSayisiString=agacSayisi+"";
+        int oksijenUretimi=agacSayisi*30;
+        String oksijenUretimiString=oksijenUretimi + "";
         String [] bolge = bolgeService.bolgeler();
         System.out.println(tp + " - " + agacSayisi);
 
@@ -191,8 +195,38 @@ public class GenelController {
         System.out.println(bolgeAdi);
         modelAndView.addObject("mesaj", tpk);
         modelAndView.addObject("agacSayi",agacSayisiString);
+        modelAndView.addObject("toplamOksijen",oksijenUretimiString);
 
 
+        int[] kullaniciAgaclari = kisiService.kullaniciAgaclarCoktanAza();
+        String kullanici= "";
+        String kullaniciPuanlari="";
+        String kullaniciCarpiYirmiBir="";
+        for(int i=0;i<4;i++){
+            kullanici= "kullanici" + i;
+            kullaniciPuanlari= "kullaniciPuanlari"+i;
+            kullaniciCarpiYirmiBir="kullaniciCarpiYirmiBir"+i;
+            modelAndView.addObject(kullanici,kullaniciAgaclari[i]);
+            modelAndView.addObject(kullaniciPuanlari,kullaniciAgaclari[i]*30);
+            modelAndView.addObject(kullaniciCarpiYirmiBir,kullaniciAgaclari[i]*21);
+
+        }
+
+
+        String[] kullaniciIsimleri = kisiService.kullaniciAgaclariCoktanAzaIsimleri();
+        String isimKullanici= "";
+
+        for(int i=0;i<4;i++){
+            isimKullanici= "isimKullanici" + i;
+            modelAndView.addObject(isimKullanici,kullaniciIsimleri[i]);
+        }
+
+        Date[] kullaniciDogumlari= kisiService.kullaniciDogumlari();
+        String kullaniciDogum="";
+        for(int i=0;i<4;i++){
+            kullaniciDogum= "kullaniciDogum" + i;
+            modelAndView.addObject(kullaniciDogum,kullaniciDogumlari[i]);
+        }
         return modelAndView;
     }
 }

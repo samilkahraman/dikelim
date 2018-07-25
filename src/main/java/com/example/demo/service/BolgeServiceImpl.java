@@ -18,29 +18,22 @@ public class BolgeServiceImpl implements BolgeService {
 
     public Bolge FindById(Long id) {
         return bolgeRepository.FindById(id);
-
-    public String[] bolgeler() {
-        String[] test=bolgeRepository.bolgeler();
-       // String[] bolgeler = new String[bolgeRepository.bolgeler().length];
-       // for(int i=0;i<bolgeRepository.bolgeler().length;i++){
-        //    bolgeler[i]=test
-        //}
-        return test;
     }
+        @Override
+        public String[] bolgeler () {
+            String[] test = bolgeRepository.bolgeler();
 
-    @Override
-    public Optional<Bolge> findById(Long id) {
-        return bolgeRepository.findById(id);
+            return test;
+        }
 
+
+        @Override
+        public List<Bolge> findAll () {
+            return bolgeRepository.findAll();
+        }
+
+        @Override
+        public void delete (Bolge bolge){
+            bolgeRepository.delete(bolge);
+        }
     }
-
-    @Override
-    public List<Bolge> findAll() {
-        return bolgeRepository.findAll();
-    }
-
-    @Override
-    public void delete(Bolge bolge) {
-        bolgeRepository.delete(bolge);
-    }
-}
