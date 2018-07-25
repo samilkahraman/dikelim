@@ -6,4 +6,10 @@ import java.util.List;
 
 public interface EtkinlikService {
     List<Etkinlik> findAll();
+
+    Etkinlik findbyId(Long id);
+
+    void delete(Etkinlik etkinlik);
+
 }
+

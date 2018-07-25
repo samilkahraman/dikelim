@@ -8,19 +8,20 @@ import java.util.Set;
 @Entity
 @Table(name = "sehir")
 public class Sehir {
-    private String id;
+    private Long id;
     private String name;
     private Bolge bolge;
+    private Set<Dikim_Alani> dikimAlan;
 
 
     @Id
     @Column(name = "id", columnDefinition = "serial")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -42,4 +43,11 @@ public class Sehir {
         this.bolge = bolge;
     }
 
+    @OneToMany(mappedBy = "sehir", cascade = CascadeType.ALL)
+    public Set<Dikim_Alani> getDikimAlan() {
+        return dikimAlan;
+    }
+    public void setDikimAlan(Set<Dikim_Alani> dikimAlan) {
+        this.dikimAlan = dikimAlan;
+    }
 }

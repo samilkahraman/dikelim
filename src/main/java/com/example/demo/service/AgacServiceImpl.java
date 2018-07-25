@@ -25,4 +25,14 @@ public class AgacServiceImpl implements AgacService {
     public List<Agac> findAll() {
         return agacRepository.findAll();
     }
+
+    @Override
+    public Agac FindById(Long id) {
+        return agacRepository.FindById(id);
+    }
+
+    @Override
+    public void delete(Agac agac) {
+        agacRepository.delete(agac);
+    }
 }

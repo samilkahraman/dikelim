@@ -1,6 +1,5 @@
 package com.example.demo.controller;
 
-import com.example.demo.model.Greeting;
 import com.example.demo.model.Kullanici;
 import com.example.demo.service.KisiService;
 

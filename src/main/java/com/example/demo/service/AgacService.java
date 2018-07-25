@@ -13,4 +13,7 @@ public interface AgacService {
 
     List<Agac> findAll();
 
+    Agac FindById(Long id);
+    void delete(Agac agac);
+
 }

@@ -13,7 +13,7 @@ public interface KisiRepository extends JpaRepository<Kisi, Long> {
     Kisi findByKullaniciAdi(String username);
 
     @Query("SELECT  k FROM Kisi k WHERE k.id=?1")
-    Kisi findbyId(Long id);
+    Kisi FindbyId(Long id);
 
     @Query("SELECT  k FROM Kisi k WHERE k.password=?1")
     Kisi findBySifre(String sifre);

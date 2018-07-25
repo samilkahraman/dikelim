@@ -32,6 +32,8 @@ License: You must have a valid license purchased only from themeforest(the above
     <link href="../assets/global/plugins/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css" />
     <link href="../assets/global/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
     <link href="../assets/global/plugins/bootstrap-switch/css/bootstrap-switch.min.css" rel="stylesheet" type="text/css" />
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <!-- END GLOBAL MANDATORY STYLES -->
     <!-- BEGIN PAGE LEVEL PLUGINS -->
     <link href="../assets/global/plugins/bootstrap-daterangepicker/daterangepicker.min.css" rel="stylesheet" type="text/css" />
@@ -149,7 +151,7 @@ License: You must have a valid license purchased only from themeforest(the above
         </div>
         <!-- END SIDEBAR -->
         <!-- BEGIN CONTENT -->
-        <div class="page-content-wrapper">
+        <div ng-app="myApp" ng-controller="myCtrl" class="page-content-wrapper">
             <!-- BEGIN CONTENT BODY -->
             <div class="page-content">
                 <!-- BEGIN PAGE HEADER-->
@@ -160,7 +162,7 @@ License: You must have a valid license purchased only from themeforest(the above
 
 
                 <div class="row">
-                    <div class="col-lg-12 col-xs-12 col-sm-12">
+                    <div class="col-lg-6 col-xs-6 col-sm-6">
                         <div class="portlet light bordered">
                             <div class="portlet-title">
                                 <div class="caption">
@@ -201,7 +203,8 @@ License: You must have a valid license purchased only from themeforest(the above
                                 </form>
                             </div>
                         </div>
-
+                    </div>
+                    <div class="col-lg-6 col-xs-6 col-sm-6">
                         <div class="portlet light bordered">
                             <div class="portlet-title">
                                 <div class="caption">
@@ -248,7 +251,10 @@ License: You must have a valid license purchased only from themeforest(the above
                                 </form>
                             </div>
                         </div>
-
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-xs-6 col-sm-6">
                         <div class="portlet light bordered">
                             <div class="portlet-title">
                                 <div class="caption">
@@ -293,48 +299,323 @@ License: You must have a valid license purchased only from themeforest(the above
                                 </form>
                             </div>
                         </div>
+                    </div>
 
-                        <div ng-app="myApp" ng-controller="myCtrl" class="portlet light bordered">
+                    <div class="col-lg-6 col-xs-6 col-sm-6">
+                        
+                    </div>
+                </div>
+                <div class="row">
+                    <div  class="portlet light bordered">
+                        <div style="overflow-x: auto">
+                            <div style="margin-bottom: 10px">
+                                <div class="col-md-4 portlet-title">
+                                    <div class="caption">
+                                        <span class="caption-subject font-dark sbold uppercase">Ağaçlar</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <table class=" table table-bordered table-striped table-hover">
+                                <tr>
+                                    <th> ID</th>
+                                    <th> Adanan Kişi</th>
+                                    <th> Ağacın İsmi</th>
+                                    <th> Dünyaya Mesaj</th>
+                                    <th> Satın Alan Kişi</th>
+                                    <th> Satın Alınma Tarihi</th>
+                                    <th> Ağacın Türü</th>
+                                    <th> Dikim Alani</th>
+                                    <th> Etkinlik</th>
+                                    <th> ... </th>
+                                </tr>
+                                <tr ng-repeat="x in butunAgaclar ">
+                                    <td> {{x.id }}</td>
+                                    <td> {{x.adanan }}</td>
+                                    <td> {{x.isim }}</td>
+                                    <td> {{x.mesaj }}</td>
+                                    <td> {{x.satin_alan }}</td>
+                                    <td> {{x.alim_tarihi }}</td>
+                                    <td> {{x.agac_turu }}</td>
+                                    <td> {{x.dikim_alani }}</td>
+                                    <td> {{x.etkinlik }}</td>
+                                    <td align="center">
+                                        <button ng-click="silAgac(x.id,x.isim)" class="btn btn-danger">
+                                            <i class="far fa-trash-alt"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-xs-6 col-sm-6">
+                        <div  class="portlet light bordered">
                             <div style="overflow-x: auto">
                                 <div style="margin-bottom: 10px">
                                     <div class="col-md-4 portlet-title">
                                         <div class="caption">
-                                            <span class="caption-subject font-dark sbold uppercase">ETKİNLİKLER</span>
+                                            <span class="caption-subject font-dark sbold uppercase">ağaç türü</span>
                                         </div>
                                     </div>
                                 </div>
-
                                 <table class=" table table-bordered table-striped table-hover">
                                     <tr>
                                         <th> ID</th>
-                                        <th> Acıklama</th>
+                                        <th> Açıklama</th>
                                         <th> İsim</th>
-                                        <th> Katılım Sayısı</th>
-                                        <th> Tarih</th>
-                                        <th> Dikim Alanı İsim</th>
+                                        <th> ... </th>
                                     </tr>
-
-                                    <tr ng-repeat="x in butunEtkinlikler ">
-
-                                        <td> {{x.id }}</td>
+                                    <tr ng-repeat="x in butunAgacTurleri ">
+                                        <td> {{x.agac_turu_id }}</td>
                                         <td> {{x.aciklama }}</td>
                                         <td> {{x.isim }}</td>
-                                        <td> {{x.katilim_sayisi }}</td>
-                                        <td> {{x.tarih }}</td>
-                                        <td> {{x.dikimAlani }}</td>
+                                        <td align="center">
+                                            <button ng-click="silAgacTuru(x.agac_turu_id,x.isim)" class="btn btn-danger">
+                                                <i class="far fa-trash-alt"></i>
+                                            </button>
+                                        </td>
                                     </tr>
                                 </table>
                             </div>
                         </div>
-
-
+                    </div>
+                    <div class="col-lg-6 col-xs-6 col-sm-6">
+                        <div  class="portlet light bordered">
+                            <div style="overflow-x: auto">
+                                <div style="margin-bottom: 10px">
+                                    <div class="col-md-4 portlet-title">
+                                        <div class="caption">
+                                            <span class="caption-subject font-dark sbold uppercase">dikilirler</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <table class=" table table-bordered table-striped table-hover">
+                                    <tr>
+                                        <th> Ağaç Türü</th>
+                                        <th> Dikim Alanı</th>
+                                        <th> ... </th>
+                                    </tr>
+                                    <tr ng-repeat="x in butunDikilirler ">
+                                        <td> {{x.agac_turu }}</td>
+                                        <td> {{x.dikim_alani }}</td>
+                                        <td align="center">
+                                            <button ng-click="silDikilirler(x.agac_turu,x.dikim_alani)" class="btn btn-danger">
+                                                <i class="far fa-trash-alt"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                <div  class="portlet light bordered">
+                    <div style="overflow-x: auto">
+                        <div style="margin-bottom: 10px">
+                            <div class="col-md-4 portlet-title">
+                                <div class="caption">
+                                    <span class="caption-subject font-dark sbold uppercase">DİKİM ALANLARI</span>
+                                </div>
+                            </div>
+                        </div>
+                        <table class=" table table-bordered table-striped table-hover">
+                            <tr>
+                                <th> ID</th>
+                                <th> İsim</th>
+                                <th> Kapasite</th>
+                                <th> Toprak Yapısı</th>
+                                <th> Tahmini Sulama Sıklığı</th>
+                                <th> Şehir</th>
+                                <th> ... </th>
+                            </tr>
+                            <tr ng-repeat="x in butunDikimAlanlari ">
+                                <td> {{x.dikim_alani_id }}</td>
+                                <td> {{x.isim }}</td>
+                                <td> {{x.kapasite }}</td>
+                                <td> {{x.toprak_yapisi }}</td>
+                                <td> {{x.tahmini_sulama_sikligi }}</td>
+                                <td> {{x.sehir }}</td>
+                                <td align="center">
+                                    <button ng-click="silDikimAlani(x.dikim_alani_id,x.isim)" class="btn btn-danger">
+                                        <i class="far fa-trash-alt"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div  class="portlet light bordered">
+                    <div style="overflow-x: auto">
+                        <div style="margin-bottom: 10px">
+                            <div class="col-md-4 portlet-title">
+                                <div class="caption">
+                                    <span class="caption-subject font-dark sbold uppercase">ETKİNLİKLER</span>
+                                </div>
+                            </div>
+                        </div>
+                        <table class=" table table-bordered table-striped table-hover">
+                            <tr>
+                                <th> ID</th>
+                                <th> Acıklama</th>
+                                <th> İsim</th>
+                                <th> Katılım Sayısı</th>
+                                <th> Tarih</th>
+                                <th> Dikim Alanı İsim</th>
+                                <th> ... </th>
+                            </tr>
+                            <tr ng-repeat="x in butunEtkinlikler ">
+                                <td> {{x.id }}</td>
+                                <td> {{x.aciklama }}</td>
+                                <td> {{x.isim }}</td>
+                                <td> {{x.katilim_sayisi }}</td>
+                                <td> {{x.tarih }}</td>
+                                <td> {{x.dikimAlani }}</td>
+                                <td align="center">
+                                    <button ng-click="silEtkinlik(x.id,x.isim)" class="btn btn-danger">
+                                        <i class="far fa-trash-alt"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div  class="portlet light bordered">
+                    <div style="overflow-x: auto">
+                        <div style="margin-bottom: 10px">
+                            <div class="col-md-4 portlet-title">
+                                <div class="caption">
+                                    <span class="caption-subject font-dark sbold uppercase">Kişi</span>
+                                </div>
+                            </div>
+                        </div>
+                        <table class=" table table-bordered table-striped table-hover">
+                            <tr>
+                                <th> ID</th>
+                                <th> İsim</th>
+                                <th> Soyisim</th>
+                                <th> Doğum Tarihi</th>
+                                <th> Kullanıcı Adı</th>
+                                <th> Şifre </th>
+                                <th> ... </th>
+                            </tr>
+                            <tr ng-repeat="x in butunKisiler ">
+                                <td> {{x.id }}</td>
+                                <td> {{x.isim }}</td>
+                                <td> {{x.soyisim }}</td>
+                                <td> {{x.dogum_tarihi }}</td>
+                                <td> {{x.kullanici_adi }}</td>
+                                <td> {{x.password }}</td>
+                                <td align="center">
+                                    <button ng-click="silKisi(x.id,x.soyisim)" class="btn btn-danger">
+                                        <i class="far fa-trash-alt"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-xs-6 col-sm-6">
+                        <div  class="portlet light bordered">
+                            <div style="overflow-x: auto">
+                                <div style="margin-bottom: 10px">
+                                    <div class="col-md-4 portlet-title">
+                                        <div class="caption">
+                                            <span class="caption-subject font-dark sbold uppercase">bölge</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <table class=" table table-bordered table-striped table-hover">
+                                    <tr>
+                                        <th> ID</th>
+                                        <th> Name</th>
+                                        <th> Özellikler</th>
+                                        <th> ... </th>
+                                    </tr>
+                                    <tr ng-repeat="x in butunBolgeler ">
+                                        <td> {{x.id }}</td>
+                                        <td> {{x.name }}</td>
+                                        <td> {{x.ozellikler }}</td>
+                                        <td align="center">
+                                            <button ng-click="silBolge(x.id,x.name)" class="btn btn-danger">
+                                                <i class="far fa-trash-alt"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-xs-6 col-sm-6">
+                        <div  class="portlet light bordered">
+                            <div style="overflow-x: auto">
+                                <div style="margin-bottom: 10px">
+                                    <div class="col-md-4 portlet-title">
+                                        <div class="caption">
+                                            <span class="caption-subject font-dark sbold uppercase">Şehir</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <table class=" table table-bordered table-striped table-hover">
+                                    <tr>
+                                        <th> ID</th>
+                                        <th> Name</th>
+                                        <th> Bölge</th>
+                                        <th> ... </th>
+                                    </tr>
+                                    <tr ng-repeat="x in butunSehirler ">
+                                        <td> {{x.id }}</td>
+                                        <td> {{x.name }}</td>
+                                        <td> {{x.bolge }}</td>
+                                        <td align="center">
+                                            <button ng-click="silSehir(x.id,x.name)" class="btn btn-danger">
+                                                <i class="far fa-trash-alt"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 col-xs-6 col-sm-6">
+                        <div  class="portlet light bordered">
+                            <div style="overflow-x: auto">
+                                <div style="margin-bottom: 10px">
+                                    <div class="col-md-4 portlet-title">
+                                        <div class="caption">
+                                            <span class="caption-subject font-dark sbold uppercase">Katılım</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <table class=" table table-bordered table-striped table-hover">
+                                    <tr>
+                                        <th> Etkinlik </th>
+                                        <th> Kisi </th>
+                                        <th> ... </th>
+                                    </tr>
+                                    <tr ng-repeat="x in butunKatilimlar ">
+                                        <td> {{x.etkinlik }}</td>
+                                        <td> {{x.kisi }}</td>
+                                        <td align="center">
+                                            <button ng-click="silKatilim(x.id,x.name)" class="btn btn-danger">
+                                                <i class="far fa-trash-alt"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
-
-
-
     </div>
     <!-- END CONTENT BODY -->
 </div>
@@ -360,16 +641,315 @@ License: You must have a valid license purchased only from themeforest(the above
 
     var app = angular.module('myApp', []);
     app.controller('myCtrl', function ($scope, $http) {
-        $scope.butunEtkinlikler = "";
+
+        $scope.getAgacBilgi = function () {
+            $http.get("/getagac").then(function mySuccess(response) {
+                $scope.butunAgaclar = response.data;
+            }, function myError(response) {
+            });
+        };
+
+        $scope.getAgacTuruBilgi = function () {
+            $http.get("/getagacturu").then(function mySuccess(response) {
+                $scope.butunAgacTurleri = response.data;
+            }, function myError(response) {
+            });
+        };
+
+        $scope.getBolgeBilgi = function () {
+            $http.get("/getbolge").then(function mySuccess(response) {
+                $scope.butunBolgeler = response.data;
+            }, function myError(response) {
+            });
+        };
+
+        $scope.getDikilirlerBilgi = function () {
+            $http.get("/getdikilirler").then(function mySuccess(response) {
+                $scope.butunDikilirler = response.data;
+            }, function myError(response) {
+            });
+        };
+
+        $scope.getDikimAlaniBilgi = function () {
+            $http.get("/getdikimalani").then(function mySuccess(response) {
+                $scope.butunDikimAlanlari = response.data;
+            }, function myError(response) {
+            });
+        };
 
         $scope.getEtkinlikBilgi = function () {
             $http.get("/getetkinlik").then(function mySuccess(response) {
                 $scope.butunEtkinlikler = response.data;
-                console.log($scope.allDepartments);
             }, function myError(response) {
             });
         };
+
+        $scope.getKisiBilgi = function () {
+            $http.get("/getkisi").then(function mySuccess(response) {
+                $scope.butunKisiler = response.data;
+            }, function myError(response) {
+            });
+        };
+
+        $scope.getKullaniciBilgi = function () {
+            $http.get("/getKullanici").then(function mySuccess(response) {
+                $scope.butunKullanicilar = response.data;
+            }, function myError(response) {
+            });
+        };
+
+        $scope.getSehirBilgi = function () {
+            $http.get("/getsehir").then(function mySuccess(response) {
+                $scope.butunSehirler = response.data;
+            }, function myError(response) {
+            });
+        };
+
+        $scope.getKatilimBilgi = function () {
+            $http.get("/getkatilim").then(function mySuccess(response) {
+                $scope.butunKatilimlar = response.data;
+            }, function myError(response) {
+            });
+        };
+
+        $scope.silAgacTuru = function (a, b) {
+            if (confirm("Bu ağaç türünü silmek istediğinize emin misiniz? : "+ a + b  )) {
+                $.ajax({
+                        type: "POST",
+                        url: "/deleteAgacTuru",
+                        async: false,
+                        data: {
+                            id: a
+                        },
+                        success: function (result) {
+                            alert("Başarıyla silinmiştir");
+                            $scope.getSehirBilgi();
+                            $scope.getEtkinlikBilgi();
+                            $scope.getKisiBilgi();
+                            $scope.getDikimAlaniBilgi();
+                            $scope.getDikilirlerBilgi();
+                            $scope.getBolgeBilgi();
+                            $scope.getAgacTuruBilgi();
+                            $scope.getAgacBilgi();
+                            $scope.getKatilimBilgi();
+                        }
+                    }
+                )
+            } else {
+                return false;
+            }
+        };
+
+        $scope.silAgac = function (a, b) {
+            if (confirm("Bu ağacı silmek istediğinize emin misiniz? : "+ a + b  )) {
+                $.ajax({
+                        type: "POST",
+                        url: "/deleteAgac",
+                        async: false,
+                        data: {
+                            id: a
+                        },
+                        success: function (result) {
+                            alert("Başarıyla silinmiştir");
+                            $scope.getSehirBilgi();
+                            $scope.getEtkinlikBilgi();
+                            $scope.getKisiBilgi();
+                            $scope.getDikimAlaniBilgi();
+                            $scope.getDikilirlerBilgi();
+                            $scope.getBolgeBilgi();
+                            $scope.getAgacTuruBilgi();
+                            $scope.getAgacBilgi();
+                            $scope.getKatilimBilgi();
+                        }
+                    }
+                )
+            } else {
+                return false;
+            }
+        };
+
+        $scope.silSehir = function (a, b) {
+            if (confirm("Bu şehri silmek istediğinize emin misiniz? : "+ a + b  )) {
+                $.ajax({
+                        type: "POST",
+                        url: "/deleteSehir",
+                        async: false,
+                        data: {
+                            id: a
+                        },
+                        success: function (result) {
+                            alert("Başarıyla silinmiştir");
+                            $scope.getSehirBilgi();
+                            $scope.getEtkinlikBilgi();
+                            $scope.getKisiBilgi();
+                            $scope.getDikimAlaniBilgi();
+                            $scope.getDikilirlerBilgi();
+                            $scope.getBolgeBilgi();
+                            $scope.getAgacTuruBilgi();
+                            $scope.getAgacBilgi();
+                            $scope.getKatilimBilgi();
+                        }
+                    }
+                )
+            } else {
+                return false;
+            }
+        };
+
+        $scope.silBolge = function (a, b) {
+            if (confirm("Bu bolgeyi silmek istediğinize emin misiniz? : "+ a + b  )) {
+                $.ajax({
+                        type: "POST",
+                        url: "/deleteBolge",
+                        async: false,
+                        data: {
+                            id: a
+                        },
+                        success: function (result) {
+                            alert("Başarıyla silinmiştir");
+                            $scope.getSehirBilgi();
+                            $scope.getEtkinlikBilgi();
+                            $scope.getKisiBilgi();
+                            $scope.getDikimAlaniBilgi();
+                            $scope.getDikilirlerBilgi();
+                            $scope.getBolgeBilgi();
+                            $scope.getAgacTuruBilgi();
+                            $scope.getAgacBilgi();
+                            $scope.getKatilimBilgi();
+                        }
+                    }
+                )
+            } else {
+                return false;
+            }
+        };
+
+        $scope.silKisi = function (a, b) {
+            if (confirm("Bu kisiyi silmek istediğinize emin misiniz? : "+ a + b  )) {
+                $.ajax({
+                        type: "POST",
+                        url: "/deleteKisi",
+                        async: false,
+                        data: {
+                            id: a
+                        },
+                        success: function (result) {
+                            alert("Başarıyla silinmiştir");
+                            $scope.getSehirBilgi();
+                            $scope.getEtkinlikBilgi();
+                            $scope.getKisiBilgi();
+                            $scope.getDikimAlaniBilgi();
+                            $scope.getDikilirlerBilgi();
+                            $scope.getBolgeBilgi();
+                            $scope.getAgacTuruBilgi();
+                            $scope.getAgacBilgi();
+                            $scope.getKatilimBilgi();
+                        }
+                    }
+                )
+            } else {
+                return false;
+            }
+        };
+
+        $scope.silEtkinlik = function (a, b) {
+            if (confirm("Bu etkinliği silmek istediğinize emin misiniz? : "+ a + b  )) {
+                $.ajax({
+                        type: "POST",
+                        url: "/deleteEtkinlik",
+                        async: false,
+                        data: {
+                            id: a
+                        },
+                        success: function (result) {
+                            alert("Başarıyla silinmiştir");
+                            $scope.getSehirBilgi();
+                            $scope.getEtkinlikBilgi();
+                            $scope.getKisiBilgi();
+                            $scope.getDikimAlaniBilgi();
+                            $scope.getDikilirlerBilgi();
+                            $scope.getBolgeBilgi();
+                            $scope.getAgacTuruBilgi();
+                            $scope.getAgacBilgi();
+                            $scope.getKatilimBilgi();
+                        }
+                    }
+                )
+            } else {
+                return false;
+            }
+        };
+
+        $scope.silDikimAlani= function (a, b) {
+            if (confirm("Bu dikim alanını silmek istediğinize emin misiniz? : "+ a + b  )) {
+                $.ajax({
+                        type: "POST",
+                        url: "/deleteDikimAlani",
+                        async: false,
+                        data: {
+                            id: a
+                        },
+                        success: function (result) {
+                            alert("Başarıyla silinmiştir");
+                            $scope.getSehirBilgi();
+                            $scope.getEtkinlikBilgi();
+                            $scope.getKisiBilgi();
+                            $scope.getDikimAlaniBilgi();
+                            $scope.getDikilirlerBilgi();
+                            $scope.getBolgeBilgi();
+                            $scope.getAgacTuruBilgi();
+                            $scope.getAgacBilgi();
+                            $scope.getKatilimBilgi();
+                        }
+                    }
+                )
+            } else {
+                return false;
+            }
+        };
+
+        $scope.silDikilirler= function (a, b) {
+            if (confirm("Bu dikilebilirlik ilişkisini silmek istediğinize emin misiniz? : "+ a + b  )) {
+                $.ajax({
+                        type: "POST",
+                        url: "/deleteDikilebilirlik",
+                        async: false,
+                        data: {
+                            agacTuruIsim: a,
+                            DikimAlaniIsim:b
+                        },
+                        success: function (result) {
+                            alert("Başarıyla silinmiştir");
+                            $scope.getSehirBilgi();
+                            $scope.getEtkinlikBilgi();
+                            $scope.getKisiBilgi();
+                            $scope.getDikimAlaniBilgi();
+                            $scope.getDikilirlerBilgi();
+                            $scope.getBolgeBilgi();
+                            $scope.getAgacTuruBilgi();
+                            $scope.getAgacBilgi();
+                            $scope.getKatilimBilgi();
+                        }
+                    }
+                )
+            } else {
+                return false;
+            }
+        };
+
+
+
+
         $scope.getEtkinlikBilgi();
+        //$scope.getKullaniciBilgi();
+        $scope.getSehirBilgi();
+        $scope.getKisiBilgi();
+        $scope.getDikimAlaniBilgi();
+        $scope.getDikilirlerBilgi();
+        $scope.getBolgeBilgi();
+        $scope.getAgacTuruBilgi();
+        $scope.getAgacBilgi();
+        $scope.getKatilimBilgi();
 
     });
 

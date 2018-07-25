@@ -42,7 +42,7 @@ public class Agac_Turu {
 
 
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "dikilirler",joinColumns = @JoinColumn(name = "agac_turu_id"), inverseJoinColumns = @JoinColumn(name = "dikim_alani_id"))
     public Set<Dikim_Alani> getDikim_alani_set() {
         return dikim_alani_set;

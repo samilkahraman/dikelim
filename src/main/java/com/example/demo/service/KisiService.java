@@ -10,9 +10,11 @@ public interface KisiService {
     void save(Kisi kisi);
 
     Kisi findByKullaniciAdi(String username);
-    Kisi findById(Long id);
+    Kisi FindById(Long id);
     Kisi findBySifre(String sifre);
     int toplamKullanici();
 
     List<Kisi> findAll();
+
+    void delete(Kisi kisi);
 }

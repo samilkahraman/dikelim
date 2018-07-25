@@ -28,4 +28,9 @@ public class Agac_turuServiceImpl implements Agac_turuService {
     public List<Agac_Turu> findAll() {
         return agac_turuRepository.findAll();
     }
+
+    @Override
+    public void delete(Agac_Turu agac_turu) {
+        agac_turuRepository.delete(agac_turu);
+    }
 }

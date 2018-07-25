@@ -14,11 +14,9 @@ public  class Agac {
     private Kisi satin_alan_kisi;
     private String isim;
     private Date satin_alinma_tarihi;
-    private Date dikilme_tarihi;
     private String adanan_kisi;
     private Etkinlik etkinlik;
     private String mesaj;
-    private Boolean dikildi_mi;
 
     @Id
     @Column(name = "id", columnDefinition = "serial")
@@ -79,14 +77,6 @@ public  class Agac {
         this.satin_alinma_tarihi = satin_alinma_tarihi;
     }
 
-    public Date getDikilme_tarihi() {
-        return dikilme_tarihi;
-    }
-
-    public void setDikilme_tarihi(Date dikilme_tarihi) {
-        this.dikilme_tarihi = dikilme_tarihi;
-    }
-
     public String getAdanan_kisi() {
         return adanan_kisi;
     }
@@ -113,11 +103,4 @@ public  class Agac {
         this.mesaj = mesaj;
     }
 
-    public Boolean getDikildi_mi() {
-        return dikildi_mi;
-    }
-
-    public void setDikildi_mi(Boolean dikildi_mi) {
-        this.dikildi_mi = dikildi_mi;
-    }
 }

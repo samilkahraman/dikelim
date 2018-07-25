@@ -16,7 +16,7 @@ public class Dikim_Alani {
     private Set<Agac_Turu> agac_turu_set;
     private Set<Agac> agacSet;
     private Set<Etkinlik> etkinlikSet;
-    private Long sehir_id;
+    private Sehir sehir;
     @Id
     @Column(name = "id", columnDefinition = "serial")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -78,7 +78,7 @@ public class Dikim_Alani {
         this.agacSet = agacSet;
     }
 
-    @OneToMany(mappedBy = "dikim_alani")
+    @OneToMany(mappedBy = "dikim_alani", cascade = CascadeType.ALL)
     public Set<Etkinlik> getEtkinlikSet() {
         return etkinlikSet;
     }
@@ -87,11 +87,13 @@ public class Dikim_Alani {
         this.etkinlikSet = etkinlikSet;
     }
 
-    public Long getSehir_id() {
-        return sehir_id;
+    @ManyToOne
+    @JoinColumn(name = "sehir_id")
+    public Sehir getSehir() {
+        return sehir;
     }
 
-    public void setSehir_id(Long sehir_id) {
-        this.sehir_id = sehir_id;
+    public void setSehir(Sehir sehir) {
+        this.sehir = sehir;
     }
 }
