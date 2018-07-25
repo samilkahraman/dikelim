@@ -99,48 +99,37 @@ License: You must have a valid license purchased only from themeforest(the above
                 <ul class="page-sidebar-menu  page-header-fixed page-sidebar-menu-closed " data-keep-expanded="false" data-auto-scroll="true" data-slide-speed="200" style="padding-top: 20px">
                     <!-- DOC: To remove the sidebar toggler from the sidebar you just need to completely remove the below "sidebar-toggler-wrapper" LI element -->
                     <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
-                    <li class="sidebar-toggler-wrapper hide">
-                        <div class="sidebar-toggler">
-                            <span></span>
-                        </div>
-                    </li>
-                    <!-- END SIDEBAR TOGGLER BUTTON -->
-                    <!-- DOC: To remove the search box from the sidebar you just need to completely remove the below "sidebar-search-wrapper" LI element -->
-
                     <li class="nav-item start ">
-
-
-                        <a href="/home" class="nav-link ">
+                        <a id="anasayfa" class="nav-link ">
                             <i class="icon-home"></i>
                             <span class="title">Anasayfa</span>
                         </a>
-
                     </li>
+
                     <li class="heading">
                         <h3 class="uppercase">Features</h3>
                     </li>
+
                     <li class="nav-item  ">
-                        <a href="/home" class="nav-link ">
+                        <a id="genel" class="nav-link ">
                             <i class="icon-diamond"></i>
-                            <span class="title">Anasayfa</span>
+                            <span class="title">Genel Topluluk</span>
                         </a>
-
                     </li>
+
                     <li class="nav-item  ">
-                        <a href="/home" class="nav-link ">
+                        <a id="bireysel" class="nav-link ">
                             <i class="icon-settings"></i>
-                            <span class="title">Anasayfa</span>
+                            <span class="title">Bireysel</span>
                         </a>
-
                     </li>
+
                     <li class="nav-item  ">
-                        <a href="/home" class="nav-link ">
+                        <a id="profil" class="nav-link ">
                             <i class="icon-user"></i>
-                            <span class="title">Anasayfa</span>
+                            <span class="title">Profil Yönetimi</span>
                         </a>
-
                     </li>
-
 
 
                 </ul>
@@ -313,12 +302,40 @@ License: You must have a valid license purchased only from themeforest(the above
     $(document).ready(
         function () {
             var token = $("meta[name='_csrf']").attr("content");
+
             $.ajaxSetup({
                 headers: {
                     "X-CSRF-Token": token
                 }
             });
-        })
+            var url=window.location.href
+            var id=url.substring(url.lastIndexOf('/')+1);
+            
+
+            var anasayfa=document.getElementById("anasayfa");
+
+            anasayfa.href="/home/"+id;
+
+            var genel=document.getElementById("genel");
+
+            genel.href="/genel/"+id;
+
+
+
+            var bireysel=document.getElementById("bireysel");
+
+            bireysel.href="/bireysel/"+id;
+
+
+
+            var profil=document.getElementById("profil");
+
+            profil.href="/profil/"+id;
+
+
+
+        });
+
     function dikagac () {
         var adanan = document.getElementById("adanan_ismi").value;
         var agac = document.getElementById("agac_adi").value;
@@ -339,17 +356,18 @@ License: You must have a valid license purchased only from themeforest(the above
                     alan:alan,
                     id:id
                 },
-            success:function (result) {
-                if(result=="0"){
-                    alert("İşleminiz başarıyla tamamlanmıştır");
-                    window.location="/home/"+id;
+                success:function (result) {
+                    if(result=="0"){
+                        alert("İşleminiz başarıyla tamamlanmıştır");
+                        window.location="/home/"+id;
+                    }
+                    else{
+                        alert("Bir hata meydana geldi")
+                    }
                 }
-                else{
-                    alert("Bir hata meydana geldi")
-                }
-            }
             }
         )
     }
+
 </script>
 </html>

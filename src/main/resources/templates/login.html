@@ -84,6 +84,7 @@ License: You must have a valid license purchased only from themeforest(the above
                    autocomplete="off" placeholder="Şifre" name="password"/></div>
         <div class="form-actions">
             <button type="button" id="login" onclick="girisyap()" class="btn red btn-block uppercase">Giriş yap</button>
+            <button type="button" id="admin" onclick="adminpage()"  class="btn red btn-block uppercase">Admin Sayfasına git</button>
         </div>
 
 
@@ -243,6 +244,9 @@ License: You must have a valid license purchased only from themeforest(the above
                 }
             }
         )
+    }
+    function adminpage() {
+        window.location="/kontrol"
     }
 </script>
 </html>
