@@ -5,10 +5,13 @@ import com.example.demo.model.Kisi;
 import com.example.demo.service.EtkinlikService;
 import com.example.demo.service.KisiService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Set;
 
@@ -30,9 +33,9 @@ public class KontrolController {
 
     @RequestMapping(value = {"/etkinliksec"}, method = RequestMethod.POST)
     public ResponseEntity<?> etkinlik(@RequestParam(value = "user_id", required = true) Long user_id,
-                                    @RequestParam(value = "etkinlik_id", required = true) Long etkinlik_id) {
+                                      @RequestParam(value = "etkinlik_id", required = true) Long etkinlik_id) {
         try {
-            Kisi kisi = kisiService.findById(user_id);
+            Kisi kisi = kisiService.FindById(user_id);
             Etkinlik etkinlik = etkinlikService.findbyId(etkinlik_id);
             Set<Etkinlik> etkinlikSet = kisi.getEtkinlikSet();
             etkinlikSet.add(etkinlik);

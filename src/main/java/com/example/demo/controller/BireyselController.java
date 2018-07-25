@@ -9,9 +9,14 @@ import com.example.demo.service.AgacService;
 import com.example.demo.service.Dikim_AlaniService;
 import com.example.demo.service.KisiService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 @Controller
@@ -69,8 +74,8 @@ public class BireyselController {
     }
 
     @RequestMapping(value = {"/getuseretkinlik"}, method = RequestMethod.POST)
-    public ResponseEntity<?> deneme(@RequestParam(value = "id", required = true) String id) {
-        Kisi k = kisiService.findById(new Long(id));
+    public ResponseEntity<?> deneme(@RequestParam(value = "id", required = true) Long id) {
+        Kisi k = kisiService.FindById(id);
         List<InnerEtkinlik> innerEtkinlikList=new ArrayList<>();
         for(Etkinlik etkinlik:k.getEtkinlikSet()){
             innerEtkinlikList.add(new InnerEtkinlik(etkinlik.getIsim(),etkinlik.getKatılım_sayisi(),etkinlik.getTarih().toString(),etkinlik.getDikim_alani().getIsim()));
@@ -81,8 +86,8 @@ public class BireyselController {
     //public InnerAgac(String agac_turu, String dikim_alani, String isim,
       //               String satin_alinma_tarihi, String adanan_kisi, String etkinlik, String dikim_alani1, String mesaj, String dikilme_tarihi) {
     @RequestMapping(value = ("getuseragac"),method = RequestMethod.POST)
-    public ResponseEntity<?> getuseragac(@RequestParam(value = "id", required = true) String id){
-        Kisi k = kisiService.findById(new Long(id));
+    public ResponseEntity<?> getuseragac(@RequestParam(value = "id", required = true) Long id){
+        Kisi k = kisiService.FindById(id);
         List<InnerAgac> innerAgacList=new ArrayList<>();
         for(Agac agac:k.getSatin_alinan_agacSet()){
             innerAgacList.add(new InnerAgac(agac.getAgac_turu().getIsim(),agac.getDikim_alani().getIsim(),agac.getIsim(),agac.getSatin_alinma_tarihi().toString(),
