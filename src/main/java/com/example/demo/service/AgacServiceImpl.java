@@ -27,6 +27,17 @@ public class AgacServiceImpl implements AgacService {
         return agacRepository.findAll();
     }
 
+
+    @Override
+    public Agac FindById(Long id) {
+        return agacRepository.FindById(id);
+    }
+
+    @Override
+    public void delete(Agac agac) {
+        agacRepository.delete(agac);
+    }
+
     //İÇ ANADOLU AĞAÇLAR BAŞLANGIÇ
 
     @Override
@@ -186,6 +197,7 @@ public class AgacServiceImpl implements AgacService {
     @Override
     public int marmaraToplamAgac() {return agacRepository.marmaraToplamAgac();}
     //MARMARA BİTİŞ
+
 
 
 

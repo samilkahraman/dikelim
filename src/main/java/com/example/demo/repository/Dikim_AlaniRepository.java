@@ -14,4 +14,6 @@ public interface Dikim_AlaniRepository extends JpaRepository<Dikim_Alani,Long> {
     @Query("SELECT  k FROM Dikim_Alani k WHERE k.dikim_alani_id=?1")
     Dikim_Alani findByDikim_alani_id(Long id);
 
+    @Query("SELECT  s FROM Dikim_Alani s WHERE s.id=?1")
+    Dikim_Alani FindById(Long id);
 }

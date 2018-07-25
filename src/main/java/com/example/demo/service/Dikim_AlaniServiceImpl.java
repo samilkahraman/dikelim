@@ -18,6 +18,11 @@ public class Dikim_AlaniServiceImpl implements Dikim_AlaniService {
     }
 
     @Override
+    public Dikim_Alani FindById(Long id) {
+        return dikim_alaniRepository.FindById(id);
+    }
+
+    @Override
     public Dikim_Alani findbyIsim(String isim) {
         return dikim_alaniRepository.findbyIsim(isim);
     }
@@ -25,5 +30,10 @@ public class Dikim_AlaniServiceImpl implements Dikim_AlaniService {
     @Override
     public Dikim_Alani findByDikim_alani_id(Long id) {
         return dikim_alaniRepository.findByDikim_alani_id(id);
+    }
+
+    @Override
+    public void delete(Dikim_Alani dikim_alani) {
+        dikim_alaniRepository.delete(dikim_alani);
     }
 }

@@ -20,4 +20,11 @@ public class EtkinlikServiceImpl implements EtkinlikService {
     public Etkinlik findbyId(Long id) {
         return etkinlikRepository.findbyId(id);
     }
+
+
+    @Override
+    public void delete(Etkinlik etkinlik) {
+        etkinlikRepository.delete(etkinlik);
+    }
+
 }

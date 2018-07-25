@@ -9,4 +9,6 @@ public interface SehirService {
     Sehir FindById(Long id);
 
     List<Sehir> findAll();
+
+    void delete(Sehir sehir);
 }

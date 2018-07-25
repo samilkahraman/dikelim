@@ -22,4 +22,9 @@ public class SehirServiceImpl implements SehirService {
     public List<Sehir> findAll() {
         return sehirRepository.findAll();
     }
+
+    @Override
+    public void delete(Sehir sehir) {
+        sehirRepository.delete(sehir);
+    }
 }

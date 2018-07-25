@@ -79,7 +79,7 @@ public class Etkinlik {
         this.agacSet = agacSet;
     }
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
     @JoinTable(name = "katilim", joinColumns = @JoinColumn(name = "etkinlik_id"), inverseJoinColumns = @JoinColumn(name = "kisi_id"))
     public Set<Kisi> getKisiSet() {
         return kisiSet;

@@ -13,6 +13,9 @@ public interface AgacService {
 
     List<Agac> findAll();
 
+    Agac FindById(Long id);
+    void delete(Agac agac);
+
     //İÇ ANADOLU AĞAÇLAR BAŞLANGIÇ
 
     int icAnadoluKayin();
@@ -125,4 +128,5 @@ public interface AgacService {
     int marmaraCeviz();
     int marmaraToplamAgac();
     //MARMARA BİTİŞ
+
 }

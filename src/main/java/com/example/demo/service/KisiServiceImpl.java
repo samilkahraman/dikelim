@@ -27,8 +27,8 @@ public class KisiServiceImpl implements KisiService {
 
     @Override
 
-    public Kisi findById(Long id) {
-        return kisiRepository.findbyId(id);
+    public Kisi FindById(Long id) {
+        return kisiRepository.FindbyId(id);
     }
     @Override
     public Kisi findBySifre(String sifre) {
@@ -43,5 +43,11 @@ public class KisiServiceImpl implements KisiService {
     @Override
     public List<Kisi> findAll() {
         return kisiRepository.findAll();
+    }
+
+    @Override
+    public void delete(Kisi kisi) {
+        kisiRepository.delete(kisi);
+
     }
 }
