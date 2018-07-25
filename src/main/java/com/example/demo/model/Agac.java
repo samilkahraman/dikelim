@@ -12,7 +12,6 @@ public  class Agac {
     private Agac_Turu agac_turu;
     private Dikim_Alani dikim_alani;
     private Kisi satin_alan_kisi;
-    private Kisi diken_kisi;
     private String isim;
     private Date satin_alinma_tarihi;
     private Date dikilme_tarihi;
@@ -62,15 +61,6 @@ public  class Agac {
         this.satin_alan_kisi = satin_alan_kisi;
     }
 
-    @ManyToOne
-    @JoinColumn(columnDefinition="integer",name = "diken_id",nullable = true)
-    public Kisi getDiken_kisi() {
-        return diken_kisi;
-    }
-
-    public void setDiken_kisi(Kisi diken_kisi) {
-        this.diken_kisi = diken_kisi;
-    }
 
     public String getIsim() {
         return isim;
