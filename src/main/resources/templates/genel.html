@@ -205,11 +205,11 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="progress-info">
                                 <div class="progress">
                                             <span style="width: 85%;" class="progress-bar progress-bar-success red-haze">
-                                                <span class="sr-only">85% change</span>
+                                                <span class="sr-only">85% beklenti</span>
                                             </span>
                                 </div>
                                 <div class="status">
-                                    <div class="status-title"> change </div>
+                                    <div class="status-title"> beklenti </div>
                                     <div class="status-number"> 85% </div>
                                 </div>
                             </div>
@@ -220,7 +220,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="display">
                                 <div class="number">
                                     <h3 class="font-blue-sharp">
-                                        <span data-counter="counterup" data-value="-"></span>
+                                        <span data-counter="counterup" data-value="" id="mydiv4"></span>
                                     </h3>
                                     <small>CO2 - O2 DÖNÜŞÜMÜ</small>
                                 </div>
@@ -231,11 +231,11 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="progress-info">
                                 <div class="progress">
                                             <span style="width: 45%;" class="progress-bar progress-bar-success blue-sharp">
-                                                <span class="sr-only">45% grow</span>
+                                                <span class="sr-only">45% hedefe</span>
                                             </span>
                                 </div>
                                 <div class="status">
-                                    <div class="status-title"> grow </div>
+                                    <div class="status-title"> hedefe </div>
                                     <div class="status-number"> 45% </div>
                                 </div>
                             </div>
@@ -258,11 +258,11 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="progress-info">
                                 <div class="progress">
                                             <span style="width: 57%;" class="progress-bar progress-bar-success purple-soft">
-                                                <span class="sr-only">56% change</span>
+                                                <span class="sr-only">56% beklenti</span>
                                             </span>
                                 </div>
                                 <div class="status">
-                                    <div class="status-title"> change </div>
+                                    <div class="status-title"> beklenti </div>
                                     <div class="status-number"> 57% </div>
                                 </div>
                             </div>
@@ -487,7 +487,7 @@ License: You must have a valid license purchased only from themeforest(the above
                             <div class="portlet-title">
                                 <div class="caption">
                                     <i class="icon-share font-red-sunglo"></i>
-                                    <span class="caption-subject font-red-sunglo bold uppercase">Progress Bars</span>
+                                    <span class="caption-subject font-red-sunglo bold uppercase">Genel Değişimler</span>
                                 </div>
 
                             </div>
@@ -528,6 +528,7 @@ License: You must have a valid license purchased only from themeforest(the above
                         <input th:value=" ${agacSayi}" id="agac" type="hidden"/>
                         <input th:value=" ${iAMese}" id="iam" type="hidden"/>
                         <input th:value=" ${toplamOksijen}" id="oksijen" type="hidden"/>
+                        <input th:value=" ${donusum}" id="donusum" type="hidden"/>
 
                     </div>
 
@@ -704,11 +705,14 @@ License: You must have a valid license purchased only from themeforest(the above
     var ab = $('#mydiv').data('value'); //getter
     var ab2 = $('#mydiv2').data('value'); //getter
     var ab3= $('#mydiv3').data('value'); //getter
+    var ab4= $('#mydiv4').data('value'); //getter
     var cd= document.getElementById("test").value;
     var cd2= document.getElementById("agac").value;
     var cd3= document.getElementById("oksijen").value;
+    var cd4= document.getElementById("donusum").value;
     $('#mydiv').attr("data-value",cd); //setter
     $('#mydiv2').attr("data-value",cd2); //setter
     $('#mydiv3').attr("data-value",cd3); //setter
+    $('#mydiv4').attr("data-value",cd4); //setter
 </script>
 </html>

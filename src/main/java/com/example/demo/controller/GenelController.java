@@ -184,6 +184,8 @@ public class GenelController {
         String tpk=tp+"";
         String agacSayisiString=agacSayisi+"";
         int oksijenUretimi=agacSayisi*30;
+        int karbdonusum=agacSayisi*438;
+        String karbdonusumString=karbdonusum+"";
         String oksijenUretimiString=oksijenUretimi + "";
         String [] bolge = bolgeService.bolgeler();
         System.out.println(tp + " - " + agacSayisi);
@@ -196,6 +198,7 @@ public class GenelController {
         modelAndView.addObject("mesaj", tpk);
         modelAndView.addObject("agacSayi",agacSayisiString);
         modelAndView.addObject("toplamOksijen",oksijenUretimiString);
+        modelAndView.addObject("donusum",karbdonusumString);
 
 
         int[] kullaniciAgaclari = kisiService.kullaniciAgaclarCoktanAza();
