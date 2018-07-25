@@ -24,13 +24,13 @@ public class BireyselController {
 
     public static class InnerEtkinlik {
         public String isim;
-        public Long katılım_sayisi;
+        public Long katilim_sayisi;
         public String tarih;
         public String dikim_alani;
 
         public InnerEtkinlik(String isim, Long katılım_sayisi, String tarih, String dikim_alani) {
             this.isim = isim;
-            this.katılım_sayisi = katılım_sayisi;
+            this.katilim_sayisi = katılım_sayisi;
             this.tarih = tarih;
             this.dikim_alani = dikim_alani;
         }
@@ -85,7 +85,7 @@ public class BireyselController {
     }
     //public InnerAgac(String agac_turu, String dikim_alani, String isim,
       //               String satin_alinma_tarihi, String adanan_kisi, String etkinlik, String dikim_alani1, String mesaj, String dikilme_tarihi) {
-    @RequestMapping(value = ("getuseragac"),method = RequestMethod.POST)
+    @RequestMapping(value = ("/getuseragac"),method = RequestMethod.POST)
     public ResponseEntity<?> getuseragac(@RequestParam(value = "id", required = true) Long id){
         Kisi k = kisiService.FindById(id);
         List<InnerAgac> innerAgacList=new ArrayList<>();

@@ -32,14 +32,16 @@ public class KontrolController {
     }
 
     @RequestMapping(value = {"/etkinliksec"}, method = RequestMethod.POST)
-    public ResponseEntity<?> etkinlik(@RequestParam(value = "user_id", required = true) Long user_id,
+    public ResponseEntity<?> etkinlik(@RequestParam(value = "id", required = true) Long user_id,
                                       @RequestParam(value = "etkinlik_id", required = true) Long etkinlik_id) {
         try {
             Kisi kisi = kisiService.FindById(user_id);
             Etkinlik etkinlik = etkinlikService.findbyId(etkinlik_id);
-            Set<Etkinlik> etkinlikSet = kisi.getEtkinlikSet();
-            etkinlikSet.add(etkinlik);
-            kisi.setEtkinlikSet(etkinlikSet);
+            kisi.getEtkinlikSet().add(etkinlik);
+            etkinlik.getKisiSet().add(kisi);
+            kisiService.save(kisi);
+
+
         }catch (Exception e){
             return new ResponseEntity<String>("1", HttpStatus.OK);
 

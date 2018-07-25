@@ -136,8 +136,6 @@ public class EtkinlikSecimController {
                     e.getKatılım_sayisi(), e.getTarih().toString(), e.getDikim_alani().getIsim()));
         }
         return new ResponseEntity<List<InnerEtkinlik>>(innerEtkinlikList, HttpStatus.OK);
-
-
     }
 
     @RequestMapping(value = {"/getagac"}, method = RequestMethod.GET)
